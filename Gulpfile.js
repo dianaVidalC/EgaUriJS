@@ -24,7 +24,6 @@
 var gulp     = require("gulp"),
   rename     = require("gulp-rename"),
   uglify     = require("gulp-uglify"),
-  beautify   = require("gulp-beautify"),
   notify     = require("gulp-notify"),
   open       = require("open"),
   plumber    = require("gulp-plumber"),
@@ -32,21 +31,18 @@ var gulp     = require("gulp"),
   path       = require("path"),
   jshint     = require("gulp-jshint"),
   stylish    = require("jshint-stylish"),
-  sequence   = require("run-sequence"),
   babel      = require("gulp-babel"),
   del        = require("del"),
   sourcemaps = require("gulp-sourcemaps"),
   browserify = require("browserify"),
   source     = require("vinyl-source-stream"),
   buffer     = require("vinyl-buffer"),
-  to5ify     = require('6to5ify'),
   util       = require('gulp-util');
 
 /*
  *  Logic variables, paths and other cool stuff.
  */
 var hintTask    = ["hint", "check"],
-  lintTask      = ["lint", "beautify", "indent", "prettify"],
   compressTask  = ["compress", "minify"],
   transpileTask = ["transpile"],
   browserTask   = ["browserify", "browser-support"],
@@ -61,8 +57,7 @@ var hintTask    = ["hint", "check"],
   modulesPath = mainPath + "/modules/",
 
   buildFile   = buildPath + "/" + fileName + ".js",
-  mainFile    = mainPath + "/" + fileName + ".js",
-  browserFile = browserPath + "/" + fileName + ".js";
+  mainFile    = mainPath + "/" + fileName + ".js";
 
 /*
  *  Defines another name for the same task.
@@ -95,18 +90,6 @@ var defineSimpleTask = function (name, callback) {
       result.push(array[i]);
     }
     return result;
-  },
-
-  compressRatio = function (original, compress, accuracy) {
-    var power = Math.pow(10, accuracy),
-      ratio   = (compress / original * power | 0) / power;
-    return ratio;
-  },
-
-  toPercent = function (ratio, accuracy) {
-    var power = Math.pow(10, accuracy),
-      percent = (ratio * 100 * power | 0) / power;
-    return percent;
   };
 
 /*_______ Ignore this _______*/
