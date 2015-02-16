@@ -1,0 +1,37 @@
+{
+  "name": "ega-uri",
+  "version": "0.0.1",
+  "description": "JavaScript URI parser written with Harmony (ES6) and compiled using 6to5 to maintain compatibility with ES5.",
+  "author": "Esau Garcia <egatuts@gmail.com>",
+  "scripts": {},
+  "main": "lib/index.js",
+  "homepage": "http://egatuts.github.io/egaurijs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/egatuts/egaurijs"
+  },
+  "bugs": {
+    "url": "https://github.com/egatuts/egaurijs/issues",
+    "email": "egatuts@egatuts.com",
+    "web": "https://github.com/egatuts/egaurijs/issues",
+    "mail": "egatuts@egatuts.com"
+  },
+  "keywords": [
+    "url",
+    "uri",
+    "parser",
+    "ega",
+    "egatuts",
+    "es6"
+  ],
+  "devDependencies": {},
+  "preferGlobal": false,
+  "private": true,
+  "license": "MIT",
+  "ender": "lib/ender.js",
+  "licenses": {
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/mit-license.php"
+  },
+  "github": "https://github.com/egatuts/egaurijs"
+}
