@@ -37,7 +37,9 @@ var gulp     = require("gulp"),
   browserify = require("browserify"),
   source     = require("vinyl-source-stream"),
   buffer     = require("vinyl-buffer"),
-  util       = require('gulp-util');
+  util       = require("gulp-util"),
+  prompt     = require("gulp-prompt"),
+  jeditor    = require("gulp-json-editor");
 
 /*
  *  Logic variables, paths and other cool stuff.
@@ -47,6 +49,7 @@ var hintTask    = ["hint", "check"],
   transpileTask = ["transpile"],
   browserTask   = ["browserify", "browser-support"],
   cleanTask     = ["clean"],
+  versionTask   = ["versionate"],
   watchTask     = ["watch", "observe"],
 
   logfile     = "gulp-tasks.log",
@@ -234,6 +237,29 @@ defineTask(browserTask, function () {
       title: "Project browserified.",
       message: "Now you can use the library in a web browser with ES5 compatibility."
     }));
+});
+
+/*
+ *  This will change the version code of all the JSON files (package.json and bower.json).
+ */
+defineTask(versionTask, function () {
+  var npmPackage = require("./package.json"),
+    bowerPackage = require("./bower.json"),
+    stream = gulp.src(["./package.json", "./bower.json"])
+      .pipe(prompt.prompt({
+        type: "input",
+        name: "version",
+        message: "Your version number in package.json and bower.json is " + npmPackage.version + " and " + bowerPackage.version + " respectively. Which is the new version number?"
+      }, function (res) {
+        stream
+          .pipe(jeditor({
+            "version": res.version
+          }, {
+            "indent_char": " ",
+            "indent_size": 2
+          }))
+          .pipe(gulp.dest("."));
+      }));
 });
 
 /*
