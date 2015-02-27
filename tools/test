@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied. Exiting..."
+    exit
+fi
+KARMA_CONFIG=../tests/karma-config/
+TEST_FILE=$1
+if [ $TEST_FILE == "harmony-live" ] || [ $TEST_FILE == "es6-live" ]; then
+  KARMA_CONFIG+=Harmony-live.js
+fi
+shift;
+karma start $KARMA_CONFIG "$@"
