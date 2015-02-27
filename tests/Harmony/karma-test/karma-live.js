@@ -7,7 +7,7 @@
   System.config({
     "paths": {
       "lib/*": "/base/tests/lib/*.js",
-      "test/*": "/base/tests/Harmony/*.js",
+      "test/*": "/base/tests/Harmony/karma-test/*.js",
       "es6/*": "/base/src/main/Harmony/*.js",
       "harmony/*": "/base/src/main/Harmony/*.js",
       "typescript/*": "/base/src/main/TypeScript/*.js",

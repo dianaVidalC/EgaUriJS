@@ -15,16 +15,15 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: "tests/Harmony/script.js",       included: false, watched: true, served: true },
-      { pattern: "tests/Harmony/sync-loading.js", included: false, watched: true, served: true },
-      { pattern: "src/main/Harmony/EgaUri.js",    included: false, watched: true, served: true },
+      { pattern: "src/main/Harmony/EgaUri.js", included: false, watched: true, served: true },
       { pattern: "src/main/Harmony/modules/*.js", included: false, watched: true, served: true },
-      "tests/lib/traceur.js",
-      "tests/lib/es6-module-loader.min.js",
-      "tests/lib/system.min.js",
-      "tests/lib/mocha.min.js",
-      "tests/lib/chai.min.js",
-      "tests/Harmony/karma-live.js"
+      { pattern: "tests/Harmony/karma-test/sync-loading.js", included: false, watched: true, served: true },
+      "lib/traceur.js",
+      "lib/es6-module-loader.min.js",
+      "lib/system.min.js",
+      "lib/mocha.min.js",
+      "lib/chai.min.js",
+      "tests/Harmony/karma-test/karma-live.js"
     ],
 
 
