@@ -55,7 +55,7 @@ var hintTask     = ["hint", "check"],
   compileAllTask  = ["compile", "compile-all"],
   compileES6Task  = ["compile-es6", "compile-harmony"],
   compileTSTask   = ["compile-ts", "compile-typescript"],
-  compileDartTask = ["compile-dart"],
+  //compileDartTask = ["compile-dart"],
 
   browserTask    = ["browserify", "browser-support"],
 
@@ -98,7 +98,7 @@ var hintTask     = ["hint", "check"],
 
   compressES6Path = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js", HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js"],
   compressTSPath  = [TypeScriptBuildPath + "/*.js", "!" + TypeScriptBuildPath + "/*.min.js", TypeScriptBuildPath + "/**/*.js", "!" + TypeScriptBuildPath + "/**/*.min.js"],
-  //compressDartPath = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js", HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js"],
+  compressDartPath = [DartBuildPath + "/*.js", "!" + DartBuildPath + "/*.min.js", DartBuildPath + "/**/*.js", "!" + DartBuildPath + "/**/*.min.js"],
 
   compileES6Path  = [HarmonySourceFile, HarmonySourcesPath + "/**/*.js"],
   compileTSPath   = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.ts"],
@@ -208,18 +208,11 @@ var _plumber = function (src, callback) {
  *  Compress the compiled files.
  *  Original name must be "EgaUri.js" and result name will be "EgaUri.min.js".
  */
-//defineTask(_clone(compressTask), _plumber([buildPath + "/*.js", "!" + buildPath + "/*.min.js", buildPath + "/**/*.js", "!" + buildPath + "/**/*.min.js"], function (cb, gulpStream) {
-  /*return gulpStream
-    .pipe(rename({suffix: ".min"}))
-    .pipe(uglify({ mangle: false }))
-    .pipe(plumber.stop())
-    .pipe(gulp.dest(buildPath))
-    .pipe(notify({
-      onLast: true,
-      title: "Minification finished.",
-      message: "Now you can use the minified files."
-    }));
-}));
+defineTask(_clone(compressAllTask), function () {
+  gulp.run(compressES6Task[0]);
+  gulp.run(compressTSTask[0]);
+  gulp.run(compressDartTask[0]);
+});
 
 /*
  *  Compress all HARMONY files (compiled).
@@ -249,7 +242,23 @@ defineTask(_clone(compressTSTask), _plumber(compressTSPath, function (cb, gulpSt
   .pipe(notify({
       onLast: true,
       title: "Compression finished.",
-      message: "Now you can use the all compressed files (HARMONY)."
+      message: "Now you can use the all compressed files (TYPESCRIPT)."
+    }));
+}));
+
+/*
+ *  Compress all DART files (compiled).
+ */
+defineTask(_clone(compressDartTask), _plumber(compressDartPath, function (cb, gulpStream) {
+  return gulpStream
+  .pipe(rename({suffix: ".min"}))
+  .pipe(uglify({ mangle: false }))
+  .pipe(plumber.stop())
+  .pipe(gulp.dest(DartBuildPath))
+  .pipe(notify({
+      onLast: true,
+      title: "Compression finished.",
+      message: "Now you can use the all compressed files (DART)."
     }));
 }));
 
