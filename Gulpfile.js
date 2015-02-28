@@ -45,7 +45,11 @@ var gulp     = require("gulp"),
  *  Logic variables, paths and other cool stuff.
  */
 var hintTask     = ["hint", "check"],
-  compressTask   = ["compress", "minify"],
+
+  compressAllTask  = ["compress", "compress-all", "minify", "minify-all", "optimize", "optimize-all"],
+  compressES6Task  = ["compress-es6", "compress-harmony", "minify-es6", "minify-harmony", "optimize-es6", "optimize-harmony"],
+  compressTSTask   = ["compress-ts", "compress-typescript", "minify-ts", "minify-typescript", "optimize-ts", "optimize-typescript"],
+  compressDartTask = ["compress-dart", "minify-dart", "optimize-dart"],
 
   compileAllTask  = ["compile", "compile-all"],
   compileES6Task  = ["compile-es6", "compile-harmony"],
@@ -85,15 +89,17 @@ var hintTask     = ["hint", "check"],
   DartSourcesPath       = mainPath + "/Dart",
 
   HarmonySourceFile    = HarmonySourcesPath + "/" + libraryFile,
-  HarmonyBuildFile     = HarmonyBuildPath + "/" + libraryFile,
+  //HarmonyBuildFile     = HarmonyBuildPath + "/" + libraryFile,
   TypeScriptSourceFile = TypeScriptSourcesPath + "/" + libraryName + ".ts",
-  TypeScriptBuildFile  = TypeScriptBuildPath + "/" + libraryName + ".ts",
+  //TypeScriptBuildFile  = TypeScriptBuildPath + "/" + libraryName + ".ts",
   DartSourceFile       = DartSourcesPath + "/" + libraryName + ".dart",
-  DartBuildFile        = DartBuildPath + "/" + libraryName + ".dart",
+  //DartBuildFile        = DartBuildPath + "/" + libraryName + ".dart",
+
+  compressES6Path = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js", HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js"],
 
   compileES6Path  = [HarmonySourceFile, HarmonySourcesPath + "/**/*.js"],
-  compileTSPath   = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.js"],
-  compileDartPath = [DartSourceFile, DartSourcesPath + "/**/*.js"],
+  //compileTSPath   = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.js"],
+  //compileDartPath = [DartSourceFile, DartSourcesPath + "/**/*.js"],
 
   cleanAllPath  = [buildPath + "/**", sourcesPath + "/**/*.min.js", sourcesPath + "/**/*.min.ts", sourcesPath + "/**/*.min.dart"],
   cleanES6Path  = [HarmonyBuildPath, HarmonySourcesPath + "/*.min.js"],
@@ -209,6 +215,22 @@ var _plumber = function (src, callback) {
       onLast: true,
       title: "Minification finished.",
       message: "Now you can use the minified files."
+    }));
+}));
+
+/*
+ *  Compress all HARMONY files (compiled).
+ */
+defineTask(_clone(compressES6Task), _plumber(compressES6Path, function (cb, gulpStream) {
+  return gulpStream
+    .pipe(rename({suffix: ".min"}))
+    .pipe(uglify({ mangle: false }))
+    .pipe(plumber.stop())
+    .pipe(gulp.dest(HarmonyBuildPath))
+    .pipe(notify({
+      onLast: true,
+      title: "Compression finished.",
+      message: "Now you can use the all compressed files (HARMONY)."
     }));
 }));
 
