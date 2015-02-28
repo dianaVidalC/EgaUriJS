@@ -40,29 +40,30 @@ var gulp     = require("gulp"),
   util       = require("gulp-util"),
   prompt     = require("gulp-prompt"),
   jeditor    = require("gulp-json-editor"),
-  ts         = require("gulp-typescript");
+  ts         = require("gulp-typescript"),
+  coffee     = require("gulp-coffee");
 
 /*
  *  Logic variables, paths and other cool stuff.
  */
 var hintTask     = ["hint", "check"],
 
-  compressAllTask  = ["compress", "compress-all", "minify", "minify-all", "optimize", "optimize-all"],
-  compressES6Task  = ["compress-es6", "compress-harmony", "minify-es6", "minify-harmony", "optimize-es6", "optimize-harmony"],
-  compressTSTask   = ["compress-ts", "compress-typescript", "minify-ts", "minify-typescript", "optimize-ts", "optimize-typescript"],
-  compressDartTask = ["compress-dart", "minify-dart", "optimize-dart"],
+  compressAllTask    = ["compress", "compress-all", "minify", "minify-all", "optimize", "optimize-all"],
+  compressES6Task    = ["compress-es6", "compress-harmony", "minify-es6", "minify-harmony", "optimize-es6", "optimize-harmony"],
+  compressTSTask     = ["compress-ts", "compress-typescript", "minify-ts", "minify-typescript", "optimize-ts", "optimize-typescript"],
+  compressCoffeeTask = ["compress-coffee", "compress-coffeescript", "minify-coffee", "minify-coffeescript", "optimize-coffee", "optimize-coffeescript"],
 
-  compileAllTask  = ["compile", "compile-all"],
-  compileES6Task  = ["compile-es6", "compile-harmony"],
-  compileTSTask   = ["compile-ts", "compile-typescript"],
-  //compileDartTask = ["compile-dart"],
+  compileAllTask    = ["compile", "compile-all"],
+  compileES6Task    = ["compile-es6", "compile-harmony"],
+  compileTSTask     = ["compile-ts", "compile-typescript"],
+  compileCoffeeTask = ["compile-coffee", "compile-coffeescript"],
 
   browserTask    = ["browserify", "browser-support"],
 
   cleanAllTask   = ["clean", "clean-all"],
   cleanES6Task   = ["clean-es6", "clean-harmony"],
   cleanTSTask    = ["clean-ts", "clean-typescript"],
-  cleanDartTask  = ["clean-dart"],
+  cleanCoffeeTask  = ["clean-coffee"],
 
   versionTask    = ["versionate"],
   watchTask      = ["watch", "observe"],
@@ -86,28 +87,28 @@ var hintTask     = ["hint", "check"],
   HarmonySourcesPath    = mainPath + "/Harmony",
   TypeScriptBuildPath   = buildPath + "/TypeScript",
   TypeScriptSourcesPath = mainPath + "/TypeScript",
-  DartBuildPath         = buildPath + "/Dart",
-  DartSourcesPath       = mainPath + "/Dart",
+  CoffeeBuildPath         = buildPath + "/CoffeeScript",
+  CoffeeSourcesPath       = mainPath + "/CoffeeScript",
 
   HarmonySourceFile    = HarmonySourcesPath + "/" + libraryFile,
   //HarmonyBuildFile     = HarmonyBuildPath + "/" + libraryFile,
   TypeScriptSourceFile = TypeScriptSourcesPath + "/" + libraryName + ".ts",
   //TypeScriptBuildFile  = TypeScriptBuildPath + "/" + libraryName + ".ts",
-  DartSourceFile       = DartSourcesPath + "/" + libraryName + ".dart",
-  //DartBuildFile        = DartBuildPath + "/" + libraryName + ".dart",
+  CoffeeSourceFile       = CoffeeSourcesPath + "/" + libraryName + ".coffee",
+  //CoffeeBuildFile        = CoffeeBuildPath + "/" + libraryName + ".coffee",
 
   compressES6Path = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js", HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js"],
   compressTSPath  = [TypeScriptBuildPath + "/*.js", "!" + TypeScriptBuildPath + "/*.min.js", TypeScriptBuildPath + "/**/*.js", "!" + TypeScriptBuildPath + "/**/*.min.js"],
-  compressDartPath = [DartBuildPath + "/*.js", "!" + DartBuildPath + "/*.min.js", DartBuildPath + "/**/*.js", "!" + DartBuildPath + "/**/*.min.js"],
+  compressCoffeePath = [CoffeeBuildPath + "/*.js", "!" + CoffeeBuildPath + "/*.min.js", CoffeeBuildPath + "/**/*.js", "!" + CoffeeBuildPath + "/**/*.min.js"],
 
   compileES6Path  = [HarmonySourceFile, HarmonySourcesPath + "/**/*.js"],
   compileTSPath   = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.ts"],
-  //compileDartPath = [DartSourceFile, DartSourcesPath + "/**/*.js"],
+  compileCoffeePath = [CoffeeSourceFile, CoffeeSourcesPath + "/**/*.coffee"],
 
-  cleanAllPath  = [buildPath + "/**", sourcesPath + "/**/*.min.js", sourcesPath + "/**/*.min.ts", sourcesPath + "/**/*.min.dart"],
+  cleanAllPath  = [buildPath + "/**", sourcesPath + "/**/*.min.js", sourcesPath + "/**/*.min.ts", sourcesPath + "/**/*.min.coffee"],
   cleanES6Path  = [HarmonyBuildPath, HarmonySourcesPath + "/*.min.js"],
   cleanTSPath   = [TypeScriptBuildPath, TypeScriptSourcesPath + "/*.min.ts"],
-  cleanDartPath = [DartBuildPath, DartSourcesPath + "/*.min.dart"];
+  cleanCoffeePath = [CoffeeBuildPath, CoffeeSourcesPath + "/*.min.coffee"];
 
 /*
  *  Defines another name for the same task.
@@ -211,7 +212,7 @@ var _plumber = function (src, callback) {
 defineTask(_clone(compressAllTask), function () {
   gulp.run(compressES6Task[0]);
   gulp.run(compressTSTask[0]);
-  gulp.run(compressDartTask[0]);
+  gulp.run(compressCoffeeTask[0]);
 });
 
 /*
@@ -235,11 +236,11 @@ defineTask(_clone(compressES6Task), _plumber(compressES6Path, function (cb, gulp
  */
 defineTask(_clone(compressTSTask), _plumber(compressTSPath, function (cb, gulpStream) {
   return gulpStream
-  .pipe(rename({suffix: ".min"}))
-  .pipe(uglify({ mangle: false }))
-  .pipe(plumber.stop())
-  .pipe(gulp.dest(TypeScriptBuildPath))
-  .pipe(notify({
+    .pipe(rename({suffix: ".min"}))
+    .pipe(uglify({ mangle: false }))
+    .pipe(plumber.stop())
+    .pipe(gulp.dest(TypeScriptBuildPath))
+    .pipe(notify({
       onLast: true,
       title: "Compression finished.",
       message: "Now you can use the all compressed files (TYPESCRIPT)."
@@ -247,18 +248,18 @@ defineTask(_clone(compressTSTask), _plumber(compressTSPath, function (cb, gulpSt
 }));
 
 /*
- *  Compress all DART files (compiled).
+ *  Compress all COFFEESCRIPT files (compiled).
  */
-defineTask(_clone(compressDartTask), _plumber(compressDartPath, function (cb, gulpStream) {
+defineTask(_clone(compressCoffeeTask), _plumber(compressCoffeePath, function (cb, gulpStream) {
   return gulpStream
-  .pipe(rename({suffix: ".min"}))
-  .pipe(uglify({ mangle: false }))
-  .pipe(plumber.stop())
-  .pipe(gulp.dest(DartBuildPath))
-  .pipe(notify({
+    .pipe(rename({suffix: ".min"}))
+    .pipe(uglify({ mangle: false }))
+    .pipe(plumber.stop())
+    .pipe(gulp.dest(CoffeeBuildPath))
+    .pipe(notify({
       onLast: true,
       title: "Compression finished.",
-      message: "Now you can use the all compressed files (DART)."
+      message: "Now you can use the all compressed files (COFFEESCRIPT)."
     }));
 }));
 
@@ -306,7 +307,7 @@ defineTask(_clone(cleanAllTask), _plumber("./", function (cb, gulpStream) {
 defineTask(_clone(cleanES6Task), _plumber("./", function (cb, gulpStream) {
   del(cleanES6Path);
   return gulpStream
-  .pipe(notify({
+    .pipe(notify({
       onLast: true,
       title: "Project cleaned.",
       message: "Now you can recompile your HARMONY sources."
@@ -327,15 +328,15 @@ defineTask(_clone(cleanTSTask), _plumber("./", function (cb, gulpStream) {
 }));
 
 /*
- *  This will remove all DART files inside src/build directory to allow recompilation.
+ *  This will remove all COFFEESCRIPT files inside src/build directory to allow recompilation.
  */
-defineTask(_clone(cleanDartTask), _plumber("./", function (cb, gulpStream) {
-  del(cleanDartPath);
+defineTask(_clone(cleanCoffeeTask), _plumber("./", function (cb, gulpStream) {
+  del(cleanCoffeePath);
   return gulpStream
-  .pipe(notify({
+    .pipe(notify({
       onLast: true,
       title: "Project cleaned.",
-      message: "Now you can recompile your DART sources."
+      message: "Now you can recompile your COFFEESCRIPT sources."
     }));
 }));
 
@@ -346,17 +347,27 @@ defineTask(_clone(cleanDartTask), _plumber("./", function (cb, gulpStream) {
 //=======================================================================================================
 
 /*
+ *  Compress the compiled files.
+ *  Original name must be "EgaUri.js" and result name will be "EgaUri.min.js".
+ */
+defineTask(_clone(compressAllTask), function () {
+  gulp.run(compileES6Task[0]);
+  gulp.run(compileTSTask[0]);
+  gulp.run(compileCoffeeTask[0]);
+});
+
+/*
  *  This will compile all the HARMONY modules to ES5 syntax.
  */
 defineTask(_clone(compileES6Task), _plumber(compileES6Path, function (cb, gulpStream) {
   return gulpStream
-  .pipe(sourcemaps.init())
-  .pipe(babel({
+    .pipe(sourcemaps.init())
+    .pipe(babel({
       modules: "common"
     }))
-  .pipe(sourcemaps.write("."))
-  .pipe(gulp.dest(HarmonyBuildPath))
-  .pipe(notify({
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest(HarmonyBuildPath))
+    .pipe(notify({
       onLast: true,
       title: "Project compiled (HARMONY).",
       message: "Now you can compress all HARMONY compiled sources and use its source maps."
@@ -370,8 +381,8 @@ defineTask(_clone(compileTSTask), _plumber(compileTSPath, function (cb, gulpStre
   var tsResult = gulpStream
   .pipe(sourcemaps.init())
   .pipe(ts({
-      module: "commonjs"
-    }));
+    module: "commonjs"
+  }));
 
   return tsResult.js.pipe(sourcemaps.write("."))
     .pipe(gulp.dest(TypeScriptBuildPath))
@@ -383,22 +394,22 @@ defineTask(_clone(compileTSTask), _plumber(compileTSPath, function (cb, gulpStre
 }));
 
 /*
- *  This will compile all the DART modules to ES3 syntax.
+ *  This will compile all the COFFEESCRIPT modules to ES3 syntax.
  */
-/*defineTask(_clone(compileDartTask), _plumber(compileDartPath, function (cb, gulpStream) {
+defineTask(_clone(compileCoffeeTask), _plumber(compileCoffeePath, function (cb, gulpStream) {
   return gulpStream
-  .pipe(sourcemaps.init())
-  .pipe(babel({
-      modules: "common"
+    .pipe(sourcemaps.init())
+    .pipe(coffee({
+      bare: true
     }))
-  .pipe(sourcemaps.write("."))
-  .pipe(gulp.dest(buildPath))
-  .pipe(notify({
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest(CoffeeBuildPath))
+    .pipe(notify({
       onLast: true,
-      title: "Project compiled (DART).",
-      message: "Now you can compress all DART compiled sources and use its source maps."
+      title: "Project compiled (COFFEESCRIPT).",
+      message: "Now you can compress all COFFEESCRIPT compiled sources and use its source maps."
     }));
-}));*/
+}));
 
 //=======================================================================================================
 
