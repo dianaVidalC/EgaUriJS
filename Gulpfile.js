@@ -39,7 +39,8 @@ var gulp     = require("gulp"),
   buffer     = require("vinyl-buffer"),
   util       = require("gulp-util"),
   prompt     = require("gulp-prompt"),
-  jeditor    = require("gulp-json-editor");
+  jeditor    = require("gulp-json-editor"),
+  ts         = require("gulp-typescript");
 
 /*
  *  Logic variables, paths and other cool stuff.
@@ -98,7 +99,7 @@ var hintTask     = ["hint", "check"],
   compressES6Path = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js", HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js"],
 
   compileES6Path  = [HarmonySourceFile, HarmonySourcesPath + "/**/*.js"],
-  //compileTSPath   = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.js"],
+  compileTSPath   = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.ts"],
   //compileDartPath = [DartSourceFile, DartSourcesPath + "/**/*.js"],
 
   cleanAllPath  = [buildPath + "/**", sourcesPath + "/**/*.min.js", sourcesPath + "/**/*.min.ts", sourcesPath + "/**/*.min.dart"],
@@ -338,20 +339,21 @@ defineTask(_clone(compileES6Task), _plumber(compileES6Path, function (cb, gulpSt
 /*
  *  This will compile all the TYPESCRIPT modules to ES3 syntax.
  */
-/*defineTask(_clone(compileTSTask), _plumber(compileTSPath, function (cb, gulpStream) {
-  return gulpStream
+defineTask(_clone(compileTSTask), _plumber(compileTSPath, function (cb, gulpStream) {
+  var tsResult = gulpStream
   .pipe(sourcemaps.init())
-  .pipe(babel({
-      modules: "common"
-    }))
-  .pipe(sourcemaps.write("."))
-  .pipe(gulp.dest(HarmonyBuildPath))
-  .pipe(notify({
+  .pipe(ts({
+      module: "commonjs"
+    }));
+
+  return tsResult.js.pipe(sourcemaps.write("."))
+    .pipe(gulp.dest(TypeScriptBuildPath))
+    .pipe(notify({
       onLast: true,
       title: "Project compiled (TYPESCRIPT).",
       message: "Now you can compress all TYPESCRIPT compiled sources and use its source maps."
     }));
-}));*/
+}));
 
 /*
  *  This will compile all the DART modules to ES3 syntax.
