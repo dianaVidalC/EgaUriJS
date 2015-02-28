@@ -48,16 +48,38 @@ var hintTask    = ["hint", "check"],
   compressTask  = ["compress", "minify"],
   transpileTask = ["transpile"],
   browserTask   = ["browserify", "browser-support"],
-  cleanTask     = ["clean"],
+  cleanAllTask  = ["clean", "clean-all"],
+  cleanES6Task  = ["clean-es6", "clean-harmony"],
+  cleanTSTask   = ["clean-ts", "clean-typescript"],
+  cleanDartTask = ["clean-dart"],
   versionTask   = ["versionate"],
   watchTask     = ["watch", "observe"],
 
   logfile     = "gulp-tasks.log",
   fileName    = "EgaUri",
-  buildPath   = "./src/build",
   browserPath = buildPath + "/browser",
-  mainPath    = "./src/main",
-  modulesPath = mainPath + "/modules/",
+  modulesPath = mainPath + "/modules/";
+
+  var rootPath = "./",
+
+  sourcesPath = rootPath + "src",
+  testPath    = rootPath + "tests",
+  toolsPath   = rootPath + "tools",
+
+  buildPath = sourcesPath + "/build",
+  mainPath  = sourcesPath + "/main",
+
+  HarmonyBuildPath      = buildPath + "/Harmony",
+  HarmonySourcesPath    = mainPath + "/Harmony",
+  TypeScriptBuildPath   = buildPath + "/TypeScript",
+  TypeScriptSourcesPath = mainPath + "/TypeScript",
+  DartBuildPath         = buildPath + "/Dart",
+  DartSourcesPath       = mainPath + "/Dart",
+
+  cleanAllPath  = [buildPath + "/**", sourcesPath + "/**/*.min.js", sourcesPath + "/**/*.min.ts", sourcesPath + "/**/*.min.dart"],
+  cleanES6Path  = [HarmonyBuildPath, HarmonySourcesPath + "/*.min.js"],
+  cleanTSPath   = [TypeScriptBuildPath, TypeScriptSourcesPath + "/*.min.ts"],
+  cleanDartPath = [DartBuildPath, DartSourcesPath + "/*.min.dart"],
 
   buildFile   = buildPath + "/" + fileName + ".js",
   mainFile    = mainPath + "/" + fileName + ".js";
@@ -187,21 +209,65 @@ defineTask(_clone(hintTask), _plumber([modulesPath + "/*.js", mainPath + "*.js",
     }));
 }));
 
+
+
+//===================================================================================
+
 /*
- *  This will remove all the files inside src/build directory to allow recompilation.
+ *  This will remove ALL the files inside src/build directory to allow recompilation.
  */
-defineTask(_clone(cleanTask), _plumber("./", function (cb, gulpStream) {
-  del([
-    buildPath + "/**",
-    "./src/**/*.min.js"
-  ]);
+defineTask(_clone(cleanAllTask), _plumber("./", function (cb, gulpStream) {
+  del(cleanAllPath);
   return gulpStream
     .pipe(notify({
       onLast: true,
       title: "Project cleaned.",
-      message: "Now you can recompile all the sources."
+      message: "Now you can recompile ALL the sources."
     }));
 }));
+
+/*
+ *  This will remove all HARMONY files inside src/build directory to allow recompilation.
+ */
+defineTask(_clone(cleanES6Task), _plumber("./", function (cb, gulpStream) {
+  del(cleanES6Path);
+  return gulpStream
+  .pipe(notify({
+      onLast: true,
+      title: "Project cleaned.",
+      message: "Now you can recompile your HARMONY sources."
+    }));
+}));
+
+/*
+ *  This will remove all TYPESCRIPT files inside src/build directory to allow recompilation.
+ */
+defineTask(_clone(cleanTSTask), _plumber("./", function (cb, gulpStream) {
+  del(cleanTSPath);
+  return gulpStream
+  .pipe(notify({
+      onLast: true,
+      title: "Project cleaned.",
+      message: "Now you can recompile your TYPESCRIPT sources."
+    }));
+}));
+
+/*
+ *  This will remove all DART files inside src/build directory to allow recompilation.
+ */
+defineTask(_clone(cleanDartTask), _plumber("./", function (cb, gulpStream) {
+  del(cleanDartPath);
+  return gulpStream
+  .pipe(notify({
+      onLast: true,
+      title: "Project cleaned.",
+      message: "Now you can recompile your DART sources."
+    }));
+}));
+
+//===================================================================================
+
+
 
 /*
  *  This will compile all the modules into one file and
