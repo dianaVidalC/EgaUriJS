@@ -43,7 +43,8 @@ var gulp     = require("gulp"),
   ts         = require("gulp-typescript"),
   coffee     = require("gulp-coffee"),
   filter     = require("gulp-filter"),
-  tslint     = require("gulp-tslint");
+  tslint     = require("gulp-tslint"),
+  coffeelint = require("gulp-coffeelint");
 
 var filterTypeScript = filter(["*.ts"]),
   filterJavaScript   = filter(["*.js"]),
@@ -55,7 +56,7 @@ var filterTypeScript = filter(["*.ts"]),
 var //hintAllTask  = ["hint", "hint-all", "check", "check-all"],
   hintES6Task    = ["hint-es6", "hint-harmony", "check-es6", "check-harmony"],
   hintTSTask     = ["hint-ts", "hint-typescript", "check-ts", "check-typescript"],
-  //hintCoffeeTask = ["hint-coffee", "hint-coffeescript", "check-coffee", "check-coffeescript"],
+  hintCoffeeTask = ["hint-coffee", "hint-coffeescript", "check-coffee", "check-coffeescript"],
 
   compressAllTask    = ["compress", "compress-all", "minify", "minify-all", "optimize", "optimize-all"],
   compressES6Task    = ["compress-es6", "compress-harmony", "minify-es6", "minify-harmony", "optimize-es6", "optimize-harmony"],
@@ -112,10 +113,10 @@ var //hintAllTask  = ["hint", "hint-all", "check", "check-all"],
                  TypeScriptSourcesPath + "/*.ts", "!" + TypeScriptSourcesPath + "/*.min.ts", "!" + TypeScriptSourcesPath + "/*.d.ts",
                  TypeScriptSourcesPath + "/**/*.ts", "!" + TypeScriptSourcesPath + "/**/*.min.ts", "!" + TypeScriptSourcesPath + "/**/*s.d.ts"],
 
-  //hintCoffeePath = [CoffeeBuildPath + "/*.js", "!" + CoffeeBuildPath + "/*.min.js",
-  //                  CoffeeBuildPath + "/**/*.js", "!" + CoffeeBuildPath + "/**/*.min.js",
-  //                  CoffeeSourcesPath + "/*.coffee", "!" + CoffeeSourcesPath + "/*.min.coffee",
-  //                  CoffeeSourcesPath + "/**/*.coffee", "!" + CoffeeSourcesPath + "/**/*.min.coffee"],
+  hintCoffeePath = [CoffeeBuildPath + "/*.js", "!" + CoffeeBuildPath + "/*.min.js",
+                    CoffeeBuildPath + "/**/*.js", "!" + CoffeeBuildPath + "/**/*.min.js",
+                    CoffeeSourcesPath + "/*.coffee", "!" + CoffeeSourcesPath + "/*.min.coffee",
+                    CoffeeSourcesPath + "/**/*.coffee", "!" + CoffeeSourcesPath + "/**/*.min.coffee"],
 
   compressES6Path = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js", HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js"],
   compressTSPath  = [TypeScriptBuildPath + "/*.js", "!" + TypeScriptBuildPath + "/*.min.js", TypeScriptBuildPath + "/**/*.js", "!" + TypeScriptBuildPath + "/**/*.min.js"],
@@ -312,6 +313,25 @@ defineTask(_clone(hintTSTask), _plumber(hintTSPath, function (cb, gulpStream) {
     .pipe(tslint.report("verbose"))
     .pipe(filterTypeScript.restore())
     .pipe(notify({
+      onLast: true,
+      title: "JavaScript hint finished.",
+      message: "ES6 and ES5 versions has been hinted with jshint."
+    }));
+}));
+
+defineTask(_clone(hintCoffeeTask), _plumber(hintCoffeePath, function (cb, gulpStream) {
+  return gulpStream
+  .pipe(filterJavaScript)
+  .pipe(jshint())
+  .pipe(jshint.reporter(stylish))
+  .pipe(jshint.reporter("fail"))
+  .pipe(filterJavaScript.restore())
+  .pipe(filterCoffeeScript)
+  .pipe(coffeelint())
+  .pipe(coffeelint.reporter())
+  .pipe(coffeelint.reporter("fail"))
+  .pipe(filterCoffeeScript.restore())
+  .pipe(notify({
       onLast: true,
       title: "JavaScript hint finished.",
       message: "ES6 and ES5 versions has been hinted with jshint."
