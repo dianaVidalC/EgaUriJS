@@ -12,8 +12,8 @@ elif [ $TEST_FILE == "harmony" ] || [ $TEST_FILE == "es6" ] || [ $TEST_FILE == "
   KARMA_CONFIG+=Harmony-precompiled.js
 elif [ $TEST_FILE == "typescript" ] || [ $TEST_FILE == "ts" ]; then
   KARMA_CONFIG+=TypeScript.js
-elif [ $TEST_FILE == "dart" ]; then
-  KARMA_CONFIG+=Dart.js
+elif [ $TEST_FILE == "coffee" ] || [ $TEST_FILE == "coffeescript" ]; then
+  KARMA_CONFIG+=CoffeeScript.js
 fi
 shift;
 karma start $KARMA_CONFIG "$@"
