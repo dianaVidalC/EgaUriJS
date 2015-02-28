@@ -44,23 +44,31 @@ var gulp     = require("gulp"),
 /*
  *  Logic variables, paths and other cool stuff.
  */
-var hintTask    = ["hint", "check"],
-  compressTask  = ["compress", "minify"],
-  transpileTask = ["transpile"],
-  browserTask   = ["browserify", "browser-support"],
-  cleanAllTask  = ["clean", "clean-all"],
-  cleanES6Task  = ["clean-es6", "clean-harmony"],
-  cleanTSTask   = ["clean-ts", "clean-typescript"],
-  cleanDartTask = ["clean-dart"],
-  versionTask   = ["versionate"],
-  watchTask     = ["watch", "observe"],
+var hintTask     = ["hint", "check"],
+  compressTask   = ["compress", "minify"],
+
+  compileAllTask  = ["compile", "compile-all"],
+  compileES6Task  = ["compile-es6", "compile-harmony"],
+  compileTSTask   = ["compile-ts", "compile-typescript"],
+  compileDartTask = ["compile-dart"],
+
+  browserTask    = ["browserify", "browser-support"],
+
+  cleanAllTask   = ["clean", "clean-all"],
+  cleanES6Task   = ["clean-es6", "clean-harmony"],
+  cleanTSTask    = ["clean-ts", "clean-typescript"],
+  cleanDartTask  = ["clean-dart"],
+
+  versionTask    = ["versionate"],
+  watchTask      = ["watch", "observe"],
 
   logfile     = "gulp-tasks.log",
-  fileName    = "EgaUri",
   browserPath = buildPath + "/browser",
   modulesPath = mainPath + "/modules/";
 
   var rootPath = "./",
+  libraryName = "EgaUri",
+  libraryFile = libraryName + ".js",
 
   sourcesPath = rootPath + "src",
   testPath    = rootPath + "tests",
@@ -76,13 +84,21 @@ var hintTask    = ["hint", "check"],
   DartBuildPath         = buildPath + "/Dart",
   DartSourcesPath       = mainPath + "/Dart",
 
+  HarmonySourceFile    = HarmonySourcesPath + "/" + libraryFile,
+  HarmonyBuildFile     = HarmonyBuildPath + "/" + libraryFile,
+  TypeScriptSourceFile = TypeScriptSourcesPath + "/" + libraryName + ".ts",
+  TypeScriptBuildFile  = TypeScriptBuildPath + "/" + libraryName + ".ts",
+  DartSourceFile       = DartSourcesPath + "/" + libraryName + ".dart",
+  DartBuildFile        = DartBuildPath + "/" + libraryName + ".dart",
+
+  compileES6Path  = [HarmonySourceFile, HarmonySourcesPath + "/**/*.js"],
+  compileTSPath   = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.js"],
+  compileDartPath = [DartSourceFile, DartSourcesPath + "/**/*.js"],
+
   cleanAllPath  = [buildPath + "/**", sourcesPath + "/**/*.min.js", sourcesPath + "/**/*.min.ts", sourcesPath + "/**/*.min.dart"],
   cleanES6Path  = [HarmonyBuildPath, HarmonySourcesPath + "/*.min.js"],
   cleanTSPath   = [TypeScriptBuildPath, TypeScriptSourcesPath + "/*.min.ts"],
-  cleanDartPath = [DartBuildPath, DartSourcesPath + "/*.min.dart"],
-
-  buildFile   = buildPath + "/" + fileName + ".js",
-  mainFile    = mainPath + "/" + fileName + ".js";
+  cleanDartPath = [DartBuildPath, DartSourcesPath + "/*.min.dart"];
 
 /*
  *  Defines another name for the same task.
@@ -175,12 +191,16 @@ var _plumber = function (src, callback) {
   };
 };
 
+
+
+//===================================================================================================================================================================================
+
 /*
- *  Compresses the result build file.
+ *  Compress the compiled files.
  *  Original name must be "EgaUri.js" and result name will be "EgaUri.min.js".
  */
-defineTask(_clone(compressTask), _plumber([buildPath + "/*.js", "!" + buildPath + "/*.min.js", buildPath + "/**/*.js", "!" + buildPath + "/**/*.min.js"], function (cb, gulpStream) {
-  return gulpStream
+//defineTask(_clone(compressTask), _plumber([buildPath + "/*.js", "!" + buildPath + "/*.min.js", buildPath + "/**/*.js", "!" + buildPath + "/**/*.min.js"], function (cb, gulpStream) {
+  /*return gulpStream
     .pipe(rename({suffix: ".min"}))
     .pipe(uglify({ mangle: false }))
     .pipe(plumber.stop())
@@ -192,11 +212,15 @@ defineTask(_clone(compressTask), _plumber([buildPath + "/*.js", "!" + buildPath 
     }));
 }));
 
+//===================================================================================================================================================================================
+
+
+
 /*
  *  Hints all JavaScript files to detect syntax errors.
  *  It does not make a unit testing; execute "test" task to do that.
  */
-defineTask(_clone(hintTask), _plumber([modulesPath + "/*.js", mainPath + "*.js", buildFile], function (cb, gulpStream) {
+/*defineTask(_clone(hintTask), _plumber([modulesPath + "/*.js", mainPath + "*.js", buildFile], function (cb, gulpStream) {
   return gulpStream
     .pipe(jshint())
     .pipe(jshint.reporter(stylish))
@@ -207,7 +231,7 @@ defineTask(_clone(hintTask), _plumber([modulesPath + "/*.js", mainPath + "*.js",
       title: "JavaScript hint finished.",
       message: "ES6 and ES5 versions has been hinted with jshint."
     }));
-}));
+}));*/
 
 
 
@@ -269,29 +293,68 @@ defineTask(_clone(cleanDartTask), _plumber("./", function (cb, gulpStream) {
 
 
 
+//=======================================================================================================
+
 /*
- *  This will compile all the modules into one file and
- *  then export them to ES5 compatible syntax.
+ *  This will compile all the HARMONY modules to ES5 syntax.
  */
-defineTask(_clone(transpileTask), _plumber([mainFile, mainPath + "/**/*.js"], function (cb, gulpStream) {
+defineTask(_clone(compileES6Task), _plumber(compileES6Path, function (cb, gulpStream) {
   return gulpStream
-    .pipe(sourcemaps.init())
-    .pipe(babel({
+  .pipe(sourcemaps.init())
+  .pipe(babel({
       modules: "common"
     }))
-    .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(buildPath))
-    .pipe(notify({
+  .pipe(sourcemaps.write("."))
+  .pipe(gulp.dest(HarmonyBuildPath))
+  .pipe(notify({
       onLast: true,
-      title: "Project transpiled.",
-      message: "Now you can compress the transpiled result and use the source maps."
+      title: "Project compiled (HARMONY).",
+      message: "Now you can compress all HARMONY compiled sources and use its source maps."
     }));
 }));
 
 /*
+ *  This will compile all the TYPESCRIPT modules to ES3 syntax.
+ */
+/*defineTask(_clone(compileTSTask), _plumber(compileTSPath, function (cb, gulpStream) {
+  return gulpStream
+  .pipe(sourcemaps.init())
+  .pipe(babel({
+      modules: "common"
+    }))
+  .pipe(sourcemaps.write("."))
+  .pipe(gulp.dest(HarmonyBuildPath))
+  .pipe(notify({
+      onLast: true,
+      title: "Project compiled (TYPESCRIPT).",
+      message: "Now you can compress all TYPESCRIPT compiled sources and use its source maps."
+    }));
+}));*/
+
+/*
+ *  This will compile all the DART modules to ES3 syntax.
+ */
+/*defineTask(_clone(compileDartTask), _plumber(compileDartPath, function (cb, gulpStream) {
+  return gulpStream
+  .pipe(sourcemaps.init())
+  .pipe(babel({
+      modules: "common"
+    }))
+  .pipe(sourcemaps.write("."))
+  .pipe(gulp.dest(buildPath))
+  .pipe(notify({
+      onLast: true,
+      title: "Project compiled (DART).",
+      message: "Now you can compress all DART compiled sources and use its source maps."
+    }));
+}));*/
+
+//=======================================================================================================
+
+/*
  *  This will re-transpile the ES6 code adding 6to5 polyfills and browserify code.
  */
-defineTask(browserTask, function () {
+/*defineTask(browserTask, function () {
   browserify(buildFile, { debug: true })
     .bundle()
     .on('error', util.log.bind(util, 'Browserify Error'))
@@ -303,12 +366,12 @@ defineTask(browserTask, function () {
       title: "Project browserified.",
       message: "Now you can use the library in a web browser with ES5 compatibility."
     }));
-});
+});*/
 
 /*
  *  This will change the version code of all the JSON files (package.json and bower.json).
  */
-defineTask(versionTask, function () {
+/*defineTask(versionTask, function () {
   var npmPackage = require("./package.json"),
     bowerPackage = require("./bower.json"),
     stream = gulp.src(["./package.json", "./bower.json"])
@@ -326,14 +389,14 @@ defineTask(versionTask, function () {
           }))
           .pipe(gulp.dest("."));
       }));
-});
+});*/
 
 /*
  *  This will watch for changes in all modules files to execute "compile" task.
  *  Also, it will watch for changes into the bundled file to execute "compress" task.
  */
-defineTask(_clone(watchTask), function () {
+/*defineTask(_clone(watchTask), function () {
   gulp.watch(mainFile, [transpileTask[0]]);
   gulp.watch(modulesPath + "/*.js", [transpileTask[0]]);
   gulp.watch(buildFile, [browserTask[0]]);
-});
+});*/
