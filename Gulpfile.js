@@ -97,6 +97,8 @@ var hintTask     = ["hint", "check"],
   //DartBuildFile        = DartBuildPath + "/" + libraryName + ".dart",
 
   compressES6Path = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js", HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js"],
+  compressTSPath  = [TypeScriptBuildPath + "/*.js", "!" + TypeScriptBuildPath + "/*.min.js", TypeScriptBuildPath + "/**/*.js", "!" + TypeScriptBuildPath + "/**/*.min.js"],
+  //compressDartPath = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js", HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js"],
 
   compileES6Path  = [HarmonySourceFile, HarmonySourcesPath + "/**/*.js"],
   compileTSPath   = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.ts"],
@@ -229,6 +231,22 @@ defineTask(_clone(compressES6Task), _plumber(compressES6Path, function (cb, gulp
     .pipe(plumber.stop())
     .pipe(gulp.dest(HarmonyBuildPath))
     .pipe(notify({
+      onLast: true,
+      title: "Compression finished.",
+      message: "Now you can use the all compressed files (HARMONY)."
+    }));
+}));
+
+/*
+ *  Compress all TYPESCRIPT files (compiled).
+ */
+defineTask(_clone(compressTSTask), _plumber(compressTSPath, function (cb, gulpStream) {
+  return gulpStream
+  .pipe(rename({suffix: ".min"}))
+  .pipe(uglify({ mangle: false }))
+  .pipe(plumber.stop())
+  .pipe(gulp.dest(TypeScriptBuildPath))
+  .pipe(notify({
       onLast: true,
       title: "Compression finished.",
       message: "Now you can use the all compressed files (HARMONY)."
