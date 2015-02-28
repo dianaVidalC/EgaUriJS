@@ -22,7 +22,10 @@
     "parser",
     "ega",
     "egatuts",
-    "es6"
+    "es6",
+    "harmony",
+    "typescript",
+    "dart"
   ],
   "devDependencies": {
     "bower": "^1.3.12",
@@ -40,6 +43,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-replace-task": "^0.1.0",
     "gulp-sourcemaps": "^1.3.0",
+    "gulp-typescript": "^2.4.2",
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.3",
     "jam": "^0.6.1",
