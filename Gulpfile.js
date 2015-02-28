@@ -46,7 +46,10 @@ var gulp     = require("gulp"),
 /*
  *  Logic variables, paths and other cool stuff.
  */
-var hintTask     = ["hint", "check"],
+var //hintAllTask  = ["hint", "hint-all", "check", "check-all"],
+  hintES6Task    = ["hint-es6", "hint-harmony", "check-es6", "check-harmony"],
+  //hintTSTask     = ["hint-ts", "hint-typescript", "check-ts", "check-typescript"],
+  //hintCoffeeTask = ["hint-coffee", "hint-coffeescript", "check-coffee", "check-coffeescript"],
 
   compressAllTask    = ["compress", "compress-all", "minify", "minify-all", "optimize", "optimize-all"],
   compressES6Task    = ["compress-es6", "compress-harmony", "minify-es6", "minify-harmony", "optimize-es6", "optimize-harmony"],
@@ -58,27 +61,23 @@ var hintTask     = ["hint", "check"],
   compileTSTask     = ["compile-ts", "compile-typescript"],
   compileCoffeeTask = ["compile-coffee", "compile-coffeescript"],
 
-  browserTask    = ["browserify", "browser-support"],
+  cleanAllTask     = ["clean", "clean-all"],
+  cleanES6Task     = ["clean-es6", "clean-harmony"],
+  cleanTSTask      = ["clean-ts", "clean-typescript"],
+  cleanCoffeeTask  = ["clean-coffee"];
 
-  cleanAllTask   = ["clean", "clean-all"],
-  cleanES6Task   = ["clean-es6", "clean-harmony"],
-  cleanTSTask    = ["clean-ts", "clean-typescript"],
-  cleanCoffeeTask  = ["clean-coffee"],
-
-  versionTask    = ["versionate"],
-  watchTask      = ["watch", "observe"],
-
-  logfile     = "gulp-tasks.log",
-  browserPath = buildPath + "/browser",
-  modulesPath = mainPath + "/modules/";
+  //versionTask    = ["versionate"],
+  //watchTask      = ["watch", "observe"];
 
   var rootPath = "./",
+
   libraryName = "EgaUri",
   libraryFile = libraryName + ".js",
 
+  logfile     = rootPath + "gulp-tasks.log",
   sourcesPath = rootPath + "src",
-  testPath    = rootPath + "tests",
-  toolsPath   = rootPath + "tools",
+  //testPath    = rootPath + "tests",
+  //toolsPath   = rootPath + "tools",
 
   buildPath = sourcesPath + "/build",
   mainPath  = sourcesPath + "/main",
@@ -87,27 +86,42 @@ var hintTask     = ["hint", "check"],
   HarmonySourcesPath    = mainPath + "/Harmony",
   TypeScriptBuildPath   = buildPath + "/TypeScript",
   TypeScriptSourcesPath = mainPath + "/TypeScript",
-  CoffeeBuildPath         = buildPath + "/CoffeeScript",
-  CoffeeSourcesPath       = mainPath + "/CoffeeScript",
+  CoffeeBuildPath       = buildPath + "/CoffeeScript",
+  CoffeeSourcesPath     = mainPath + "/CoffeeScript",
 
   HarmonySourceFile    = HarmonySourcesPath + "/" + libraryFile,
   //HarmonyBuildFile     = HarmonyBuildPath + "/" + libraryFile,
   TypeScriptSourceFile = TypeScriptSourcesPath + "/" + libraryName + ".ts",
   //TypeScriptBuildFile  = TypeScriptBuildPath + "/" + libraryName + ".ts",
-  CoffeeSourceFile       = CoffeeSourcesPath + "/" + libraryName + ".coffee",
+  CoffeeSourceFile     = CoffeeSourcesPath + "/" + libraryName + ".coffee",
   //CoffeeBuildFile        = CoffeeBuildPath + "/" + libraryName + ".coffee",
+
+  hintES6Path = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js",
+                 HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js",
+                 HarmonySourcesPath + "/*.js", "!" + HarmonySourcesPath + "/*.min.js",
+                 HarmonySourcesPath + "/**/*.js", "!" + HarmonySourcesPath + "/**/*.min.js"],
+
+  //hintTSPath  = [TypeScriptBuildPath + "/*.js", "!" + TypeScriptBuildPath + "/*.min.js",
+  //               TypeScriptBuildPath + "/**/*.js", "!" + TypeScriptBuildPath + "/**/*.min.js",
+  //               TypeScriptSourcesPath + "/*.ts", "!" + TypeScriptSourcesPath + "/*.min.ts", "!" + TypeScriptSourcesPath + "/*.d.ts",
+  //               TypeScriptSourcesPath + "/**/*.ts", "!" + TypeScriptSourcesPath + "/**/*.min.ts", "!" + TypeScriptSourcesPath + "/**/*s.d.ts"],
+
+  //hintCoffeePath = [CoffeeBuildPath + "/*.js", "!" + CoffeeBuildPath + "/*.min.js",
+  //                  CoffeeBuildPath + "/**/*.js", "!" + CoffeeBuildPath + "/**/*.min.js",
+  //                  CoffeeSourcesPath + "/*.coffee", "!" + CoffeeSourcesPath + "/*.min.coffee",
+  //                  CoffeeSourcesPath + "/**/*.coffee", "!" + CoffeeSourcesPath + "/**/*.min.coffee"],
 
   compressES6Path = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js", HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js"],
   compressTSPath  = [TypeScriptBuildPath + "/*.js", "!" + TypeScriptBuildPath + "/*.min.js", TypeScriptBuildPath + "/**/*.js", "!" + TypeScriptBuildPath + "/**/*.min.js"],
   compressCoffeePath = [CoffeeBuildPath + "/*.js", "!" + CoffeeBuildPath + "/*.min.js", CoffeeBuildPath + "/**/*.js", "!" + CoffeeBuildPath + "/**/*.min.js"],
 
-  compileES6Path  = [HarmonySourceFile, HarmonySourcesPath + "/**/*.js"],
-  compileTSPath   = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.ts"],
+  compileES6Path    = [HarmonySourceFile, HarmonySourcesPath + "/**/*.js"],
+  compileTSPath     = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.ts"],
   compileCoffeePath = [CoffeeSourceFile, CoffeeSourcesPath + "/**/*.coffee"],
 
-  cleanAllPath  = [buildPath + "/**", sourcesPath + "/**/*.min.js", sourcesPath + "/**/*.min.ts", sourcesPath + "/**/*.min.coffee"],
-  cleanES6Path  = [HarmonyBuildPath, HarmonySourcesPath + "/*.min.js"],
-  cleanTSPath   = [TypeScriptBuildPath, TypeScriptSourcesPath + "/*.min.ts"],
+  cleanAllPath    = [buildPath + "/**", sourcesPath + "/**/*.min.js", sourcesPath + "/**/*.min.ts", sourcesPath + "/**/*.min.coffee"],
+  cleanES6Path    = [HarmonyBuildPath, HarmonySourcesPath + "/*.min.js"],
+  cleanTSPath     = [TypeScriptBuildPath, TypeScriptSourcesPath + "/*.min.ts"],
   cleanCoffeePath = [CoffeeBuildPath, CoffeeSourcesPath + "/*.min.coffee"];
 
 /*
@@ -266,23 +280,21 @@ defineTask(_clone(compressCoffeeTask), _plumber(compressCoffeePath, function (cb
 //===================================================================================================================================================================================
 
 
+//========================================================================================================================
 
-/*
- *  Hints all JavaScript files to detect syntax errors.
- *  It does not make a unit testing; execute "test" task to do that.
- */
-/*defineTask(_clone(hintTask), _plumber([modulesPath + "/*.js", mainPath + "*.js", buildFile], function (cb, gulpStream) {
+defineTask(_clone(hintES6Task), _plumber(hintES6Path, function (cb, gulpStream) {
   return gulpStream
     .pipe(jshint())
     .pipe(jshint.reporter(stylish))
     .pipe(jshint.reporter("fail"))
-    .pipe(plumber.stop())
     .pipe(notify({
       onLast: true,
       title: "JavaScript hint finished.",
       message: "ES6 and ES5 versions has been hinted with jshint."
     }));
-}));*/
+}));
+
+//========================================================================================================================
 
 
 
@@ -412,6 +424,8 @@ defineTask(_clone(compileCoffeeTask), _plumber(compileCoffeePath, function (cb, 
 }));
 
 //=======================================================================================================
+
+
 
 /*
  *  This will re-transpile the ES6 code adding 6to5 polyfills and browserify code.
