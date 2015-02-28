@@ -350,7 +350,7 @@ defineTask(_clone(cleanCoffeeTask), _plumber("./", function (cb, gulpStream) {
  *  Compress the compiled files.
  *  Original name must be "EgaUri.js" and result name will be "EgaUri.min.js".
  */
-defineTask(_clone(compressAllTask), function () {
+defineTask(_clone(compileAllTask), function () {
   gulp.run(compileES6Task[0]);
   gulp.run(compileTSTask[0]);
   gulp.run(compileCoffeeTask[0]);
