@@ -8,6 +8,12 @@ KARMA_CONFIG=../tests/karma-config/
 TEST_FILE=$1
 if [ $TEST_FILE == "harmony-live" ] || [ $TEST_FILE == "es6-live" ]; then
   KARMA_CONFIG+=Harmony-live.js
+elif [ $TEST_FILE == "harmony" ] || [ $TEST_FILE == "es6" ] || [ $TEST_FILE == "harmony-precompiled" ] || [ $TEST_FILE == "es6-precompiled" ]; then
+  KARMA_CONFIG+=Harmony-precompiled.js
+elif [ $TEST_FILE == "typescript" ] || [ $TEST_FILE == "ts" ]; then
+  KARMA_CONFIG+=TypeScript.js
+elif [ $TEST_FILE == "dart" ]; then
+  KARMA_CONFIG+=Dart.js
 fi
 shift;
 karma start $KARMA_CONFIG "$@"
