@@ -53,7 +53,7 @@ var filterTypeScript = filter(["*.ts"]),
 /*
  *  Logic variables, paths and other cool stuff.
  */
-var //hintAllTask  = ["hint", "hint-all", "check", "check-all"],
+var hintAllTask  = ["hint", "hint-all", "check", "check-all"],
   hintES6Task    = ["hint-es6", "hint-harmony", "check-es6", "check-harmony"],
   hintTSTask     = ["hint-ts", "hint-typescript", "check-ts", "check-typescript"],
   hintCoffeeTask = ["hint-coffee", "hint-coffeescript", "check-coffee", "check-coffeescript"],
@@ -288,6 +288,12 @@ defineTask(_clone(compressCoffeeTask), _plumber(compressCoffeePath, function (cb
 
 
 //========================================================================================================================
+
+defineTask(_clone(hintAllTask), function () {
+  gulp.run(hintES6Task[0]);
+  gulp.run(hintTSTask[0]);
+  gulp.run(hintCoffeeTask[0]);
+});
 
 defineTask(_clone(hintES6Task), _plumber(hintES6Path, function (cb, gulpStream) {
   return gulpStream
