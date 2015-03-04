@@ -19,227 +19,335 @@
 "use strict";
 
 /*
- *  Imports, dependencies, config files and other stuff.
+ *  Dependencies.
  */
-var gulp     = require("gulp"),
-  rename     = require("gulp-rename"),
-  uglify     = require("gulp-uglify"),
-  notify     = require("gulp-notify"),
-  open       = require("open"),
-  plumber    = require("gulp-plumber"),
-  fs         = require("fs"),
-  path       = require("path"),
-  jshint     = require("gulp-jshint"),
-  stylish    = require("jshint-stylish"),
-  babel      = require("gulp-babel"),
-  del        = require("del"),
-  sourcemaps = require("gulp-sourcemaps"),
-  browserify = require("browserify"),
-  source     = require("vinyl-source-stream"),
-  buffer     = require("vinyl-buffer"),
-  util       = require("gulp-util"),
-  prompt     = require("gulp-prompt"),
-  jeditor    = require("gulp-json-editor"),
-  ts         = require("gulp-typescript"),
-  coffee     = require("gulp-coffee"),
-  filter     = require("gulp-filter"),
-  tslint     = require("gulp-tslint"),
-  coffeelint = require("gulp-coffeelint");
+var gulp       = require("gulp"),
+    rename     = require("gulp-rename"),
+    uglify     = require("gulp-uglify"),
+    notify     = require("gulp-notify"),
+    open       = require("open"),
+    plumber    = require("gulp-plumber"),
+    fs         = require("fs"),
+    path       = require("path"),
+    jshint     = require("gulp-jshint"),
+    stylish    = require("jshint-stylish"),
+    babel      = require("gulp-babel"),
+    del        = require("del"),
+    sourcemaps = require("gulp-sourcemaps"),
+    util       = require("gulp-util"),
+    prompt     = require("gulp-prompt"),
+    jeditor    = require("gulp-json-editor"),
+    ts         = require("gulp-typescript"),
+    coffee     = require("gulp-coffee"),
+    filter     = require("gulp-filter"),
+    tslint     = require("gulp-tslint"),
+    coffeelint = require("gulp-coffeelint"),
+    yargs      = require("yargs").argv,
+    sprintf    = require("sprintf-js").sprintf,
 
-var filterTypeScript = filter(["*.ts"]),
-  filterJavaScript   = filter(["*.js"]),
-  filterCoffeeScript = filter(["*.coffee"]);
-
-/*
- *  Logic variables, paths and other cool stuff.
- */
-var hintAllTask  = ["hint", "hint-all", "check", "check-all"],
-  hintES6Task    = ["hint-es6", "hint-harmony", "check-es6", "check-harmony"],
-  hintTSTask     = ["hint-ts", "hint-typescript", "check-ts", "check-typescript"],
-  hintCoffeeTask = ["hint-coffee", "hint-coffeescript", "check-coffee", "check-coffeescript"],
-
-  compressAllTask    = ["compress", "compress-all", "minify", "minify-all", "optimize", "optimize-all"],
-  compressES6Task    = ["compress-es6", "compress-harmony", "minify-es6", "minify-harmony", "optimize-es6", "optimize-harmony"],
-  compressTSTask     = ["compress-ts", "compress-typescript", "minify-ts", "minify-typescript", "optimize-ts", "optimize-typescript"],
-  compressCoffeeTask = ["compress-coffee", "compress-coffeescript", "minify-coffee", "minify-coffeescript", "optimize-coffee", "optimize-coffeescript"],
-
-  compileAllTask    = ["compile", "compile-all"],
-  compileES6Task    = ["compile-es6", "compile-harmony"],
-  compileTSTask     = ["compile-ts", "compile-typescript"],
-  compileCoffeeTask = ["compile-coffee", "compile-coffeescript"],
-
-  cleanAllTask     = ["clean", "clean-all"],
-  cleanES6Task     = ["clean-es6", "clean-harmony"],
-  cleanTSTask      = ["clean-ts", "clean-typescript"],
-  cleanCoffeeTask  = ["clean-coffee"];
-
-  //versionTask    = ["versionate"],
-  //watchTask      = ["watch", "observe"];
-
-  var rootPath = "./",
-
-  libraryName = "EgaUri",
-  libraryFile = libraryName + ".js",
-
-  logfile     = rootPath + "gulp-tasks.log",
-  sourcesPath = rootPath + "src",
-  //testPath    = rootPath + "tests",
-  //toolsPath   = rootPath + "tools",
-
-  buildPath = sourcesPath + "/build",
-  mainPath  = sourcesPath + "/main",
-
-  HarmonyBuildPath      = buildPath + "/Harmony",
-  HarmonySourcesPath    = mainPath + "/Harmony",
-  TypeScriptBuildPath   = buildPath + "/TypeScript",
-  TypeScriptSourcesPath = mainPath + "/TypeScript",
-  CoffeeBuildPath       = buildPath + "/CoffeeScript",
-  CoffeeSourcesPath     = mainPath + "/CoffeeScript",
-
-  HarmonySourceFile    = HarmonySourcesPath + "/" + libraryFile,
-  //HarmonyBuildFile     = HarmonyBuildPath + "/" + libraryFile,
-  TypeScriptSourceFile = TypeScriptSourcesPath + "/" + libraryName + ".ts",
-  //TypeScriptBuildFile  = TypeScriptBuildPath + "/" + libraryName + ".ts",
-  CoffeeSourceFile     = CoffeeSourcesPath + "/" + libraryName + ".coffee",
-  //CoffeeBuildFile        = CoffeeBuildPath + "/" + libraryName + ".coffee",
-
-  hintES6Path = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js",
-                 HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js",
-                 HarmonySourcesPath + "/*.js", "!" + HarmonySourcesPath + "/*.min.js",
-                 HarmonySourcesPath + "/**/*.js", "!" + HarmonySourcesPath + "/**/*.min.js"],
-
-  hintTSPath  = [TypeScriptBuildPath + "/*.js", "!" + TypeScriptBuildPath + "/*.min.js",
-                 TypeScriptBuildPath + "/**/*.js", "!" + TypeScriptBuildPath + "/**/*.min.js",
-                 TypeScriptSourcesPath + "/*.ts", "!" + TypeScriptSourcesPath + "/*.min.ts", "!" + TypeScriptSourcesPath + "/*.d.ts",
-                 TypeScriptSourcesPath + "/**/*.ts", "!" + TypeScriptSourcesPath + "/**/*.min.ts", "!" + TypeScriptSourcesPath + "/**/*s.d.ts"],
-
-  hintCoffeePath = [CoffeeBuildPath + "/*.js", "!" + CoffeeBuildPath + "/*.min.js",
-                    CoffeeBuildPath + "/**/*.js", "!" + CoffeeBuildPath + "/**/*.min.js",
-                    CoffeeSourcesPath + "/*.coffee", "!" + CoffeeSourcesPath + "/*.min.coffee",
-                    CoffeeSourcesPath + "/**/*.coffee", "!" + CoffeeSourcesPath + "/**/*.min.coffee"],
-
-  compressES6Path = [HarmonyBuildPath + "/*.js", "!" + HarmonyBuildPath + "/*.min.js", HarmonyBuildPath + "/**/*.js", "!" + HarmonyBuildPath + "/**/*.min.js"],
-  compressTSPath  = [TypeScriptBuildPath + "/*.js", "!" + TypeScriptBuildPath + "/*.min.js", TypeScriptBuildPath + "/**/*.js", "!" + TypeScriptBuildPath + "/**/*.min.js"],
-  compressCoffeePath = [CoffeeBuildPath + "/*.js", "!" + CoffeeBuildPath + "/*.min.js", CoffeeBuildPath + "/**/*.js", "!" + CoffeeBuildPath + "/**/*.min.js"],
-
-  compileES6Path    = [HarmonySourceFile, HarmonySourcesPath + "/**/*.js"],
-  compileTSPath     = [TypeScriptSourceFile, TypeScriptSourcesPath + "/**/*.ts"],
-  compileCoffeePath = [CoffeeSourceFile, CoffeeSourcesPath + "/**/*.coffee"],
-
-  cleanAllPath    = [buildPath + "/**", sourcesPath + "/**/*.min.js", sourcesPath + "/**/*.min.ts", sourcesPath + "/**/*.min.coffee"],
-  cleanES6Path    = [HarmonyBuildPath, HarmonySourcesPath + "/*.min.js"],
-  cleanTSPath     = [TypeScriptBuildPath, TypeScriptSourcesPath + "/*.min.ts"],
-  cleanCoffeePath = [CoffeeBuildPath, CoffeeSourcesPath + "/*.min.coffee"];
-
-/*
- *  Defines another name for the same task.
- */
-var defineSimpleTask = function (name, callback) {
-    gulp.task(name, function () {
-      gulp.run(callback);
-    });
-  },
-
-/*
- *  Defines a task with multiple names.
- */
-  defineTask = function (names, callback) {
-    if (typeof names === "string") {
-      defineTask(names.split(", "), callback);
-      return;
-    }
-    var task = names.shift(),
-      i = 0;
-    gulp.task(task, callback);
-    for (; i < names.length; i++) {
-      defineSimpleTask(names[i], task);
-    }
-  },
-
-  _clone = function (array) {
-    var result = [], i = 0;
-    for (; i < array.length; i++) {
-      result.push(array[i]);
-    }
-    return result;
-  };
-
-/*_______ Ignore this _______*/
-
-/*
- *  This is a hardcoded task definition to recognise the defined tasks.
- *  YOU MUST UNCOMMENT AND UPDATE THIS IF YOU MODIFIED THE NAMES OF
- *  THE TASKS AND YOUR IDE DOESN'T RECOGNISE THEM IN ORDER TO MAKE
- *  THEM APPEAR ON THE GULP TASKS WINDOW VIEW
- */
-//gulp.task("hint");
-//gulp.task("check");
-//gulp.task("lint");
-//gulp.task("beautify");
-//gulp.task("indent");
-//gulp.task("prettify");
-//gulp.task("compress");
-//gulp.task("minify");
-//gulp.task("compile");
-//gulp.task("build");
-//gulp.task("watch");
-//gulp.task("observe");
-
-/*_______ Ignore this _______*/
+    /*
+     *  Stream filter based on file extension.
+     */
+    filterJavaScript   = filter(["*.js"]),
+    filterTypeScript   = filter(["*.ts"]),
+    filterCoffeeScript = filter(["*.coffee"]),
 
 
-/*_______ Here starts task's definitions _______*/
-var _plumber = function (src, callback) {
-  return function (cb) {
-    var errorOcurred = false,
-      error = notify.onError({
-        onLast: true,
-        wait: true,
-        title: "Unexpected error.",
-        message: function () {
-          return "To see the full details click here to open " + logfile + " file.";
+    /*____ Task notification data ____*/
+
+    compressTaskTitle   = "Compression task finished.",
+    compressTaskMessage = "All %s compiled files were successfully minified.",
+
+    hintTaskTitle   = "Hint task finished.",
+    hintTaskMessage = "%s files and its compiled result have been hinted using %s",
+
+    cleanTaskTitle   = "Clean task finished.",
+    cleanTaskMessage = "%s files were successfully cleaned (deleted).",
+
+    compileTaskTitle   = "Compile task finished.",
+    compileTaskMessage = "%s source files were successfully compiled/transpiled.",
+
+    bundleTaskTitle   = "Bundle task finished.",
+    bundleTaskMessage = "%s source files were successfully compiled/transpiled and bundled in a single one.",
+
+
+    /*____ Tasks name declaration ____*/
+
+    /*
+     *  Hint task. Checks code syntax.
+     */
+    hintAllTask    = ["hint", "hint-all", "check", "check-all"],
+    hintES6Task    = ["hint-es6", "hint-harmony", "check-es6", "check-harmony"],
+    hintTSTask     = ["hint-ts", "hint-typescript", "check-ts", "check-typescript"],
+    hintCoffeeTask = ["hint-coffee", "hint-coffeescript", "check-coffee", "check-coffeescript"],
+
+    /*
+     *  Compress task. Minifies compiled/transpiled code appending ".min" suffix to the new file.
+     */
+    compressAllTask    = ["compress", "compress-all", "minify", "minify-all", "optimize", "optimize-all"],
+    compressES6Task    = ["compress-es6", "compress-harmony", "minify-es6", "minify-harmony", "optimize-es6", "optimize-harmony"],
+    compressTSTask     = ["compress-ts", "compress-typescript", "minify-ts", "minify-typescript", "optimize-ts", "optimize-typescript"],
+    compressCoffeeTask = ["compress-coffee", "compress-coffeescript", "minify-coffee", "minify-coffeescript", "optimize-coffee", "optimize-coffeescript"],
+
+    /*
+     *  Compile task. Compiles the code (Harmony, TypeScript or CoffeeScript) to ES3 (or ES5) compatible.
+     */
+    compileAllTask    = ["compile", "compile-all"],
+    compileES6Task    = ["compile-es6", "compile-harmony"],
+    compileTSTask     = ["compile-ts", "compile-typescript"],
+    compileCoffeeTask = ["compile-coffee", "compile-coffeescript"],
+
+    /*
+     *  Clean task. Deletes the build files (compiled/transpiled).
+     */
+    cleanAllTask     = ["clean", "clean-all"],
+    cleanES6Task     = ["clean-es6", "clean-harmony"],
+    cleanTSTask      = ["clean-ts", "clean-typescript"],
+    cleanCoffeeTask  = ["clean-coffee", "clean-coffeescript"],
+
+    /*
+     *  Bundle task. Bundles all compiled/transpiled files into a single one to do less HTTP requests.
+     */
+    bundleAllTask    = ["bundle", "bundle-all"],
+    bundleES6Task    = ["bundle-es6", "bundle-harmony"],
+    bundleTSTask     = ["bundle-ts", "bundle-typescript"],
+    bundleCoffeeTask = ["bundle-coffee", "bundle-coffeescript"],
+
+    /*
+     *  Version task. Changes the version code declared in package.json and bower.json.
+     */
+    versionateTask = ["versionate"],
+
+    /*
+     *  Watch task. Watches for changes in the declared files.
+     */
+    watchAllTask    = ["watch", "watch-all", "observe", "observe-all"],
+    watchES6Task    = ["watch-es6", "watch-harmony", "observe-es6", "observe-harmony"],
+    watchTSTask     = ["watch-ts", "watch-typescript", "observe-ts", "observe-typescript"],
+    watchCoffeeTask = ["watch-coffee", "watch-coffeescript", "observe-coffee", "observe-coffeescript"],
+
+
+    /*____ Paths declaration ____*/
+
+    /*
+     *  Each block defines a new level of the file tree.
+     */
+    rootPath = "./",
+
+    libraryName = "EgaUri",
+    logfileName = "gulp-tasks.log",
+    logfile     = rootPath + logfileName,
+    pkg         = rootPath + "package.json",
+    bwr         = rootPath + "bower.json",
+    npmPkg      = require(pkg),
+    bwrPkg      = require(bwr),
+
+    sourcesPath = rootPath + "src/",
+    testPath    = rootPath + "tests/",
+    toolsPath   = rootPath + "tools/",
+
+    buildPath = sourcesPath + "build/",
+    mainPath  = sourcesPath + "main/",
+
+    HarmonyBuildPath      = buildPath + "Harmony/",
+    HarmonySourcesPath    = mainPath + "Harmony/",
+    TypeScriptBuildPath   = buildPath + "TypeScript/",
+    TypeScriptSourcesPath = mainPath + "TypeScript/",
+    CoffeeBuildPath       = buildPath + "CoffeeScript/",
+    CoffeeSourcesPath     = mainPath + "CoffeeScript/",
+
+    HarmonySourceFile    = HarmonySourcesPath + libraryName + ".js",
+    HarmonyBuildFile     = HarmonyBuildPath + libraryName + ".js",
+    TypeScriptSourceFile = TypeScriptSourcesPath + libraryName + ".ts",
+    TypeScriptBuildFile  = TypeScriptBuildPath + libraryName + ".ts",
+    CoffeeSourceFile     = CoffeeSourcesPath + libraryName + ".coffee",
+    CoffeeBuildFile      = CoffeeBuildPath + libraryName + ".coffee",
+
+
+    /*____ File globs ____*/
+
+    /*
+     *  Hint task paths. Gets all JavaScript files under the build directory that are not compressed or bundled.
+     *  Also it hints all the original source files (except minified files).
+     */
+    hintES6Path = [
+      HarmonyBuildPath   + "*.js"   , "!" + HarmonyBuildPath   + "*.min.js"   , "!" + HarmonyBuildPath + "*.bundle.js",
+      HarmonyBuildPath   + "**/*.js", "!" + HarmonyBuildPath   + "**/*.min.js",
+      HarmonySourcesPath + "*.js"   , "!" + HarmonySourcesPath + "*.min.js",
+      HarmonySourcesPath + "**/*.js", "!" + HarmonySourcesPath + "**/*.min.js"
+    ],
+    hintTSPath = [
+      TypeScriptBuildPath   + "*.js"   , "!" + TypeScriptBuildPath   + "*.min.js",
+      TypeScriptBuildPath   + "**/*.js", "!" + TypeScriptBuildPath   + "**/*.min.js",
+      TypeScriptSourcesPath + "*.ts"   , "!" + TypeScriptSourcesPath + "*.min.ts"   , "!" + TypeScriptSourcesPath + "*.d.ts",
+      TypeScriptSourcesPath + "**/*.ts", "!" + TypeScriptSourcesPath + "**/*.min.ts", "!" + TypeScriptSourcesPath + "**/*s.d.ts"
+    ],
+    hintCoffeePath = [
+      CoffeeBuildPath   + "*.js"       , "!" + CoffeeBuildPath   + "*.min.js",
+      CoffeeBuildPath   + "**/*.js"    , "!" + CoffeeBuildPath   + "**/*.min.js",
+      CoffeeSourcesPath + "*.coffee"   , "!" + CoffeeSourcesPath + "*.min.coffee",
+      CoffeeSourcesPath + "**/*.coffee", "!" + CoffeeSourcesPath + "**/*.min.coffee"
+    ],
+
+    /*
+     *  Compress all JavaScript files under the build directory.
+     */
+    compressES6Path = [
+      HarmonyBuildPath + "*.js"   , "!" + HarmonyBuildPath + "*.min.js",
+      HarmonyBuildPath + "**/*.js", "!" + HarmonyBuildPath + "**/*.min.js"
+    ],
+    compressTSPath = [
+      TypeScriptBuildPath + "*.js"   , "!" + TypeScriptBuildPath + "*.min.js",
+      TypeScriptBuildPath + "**/*.js", "!" + TypeScriptBuildPath + "**/*.min.js"
+    ],
+    compressCoffeePath = [
+      CoffeeBuildPath + "*.js"   , "!" + CoffeeBuildPath + "*.min.js",
+      CoffeeBuildPath + "**/*.js", "!" + CoffeeBuildPath + "**/*.min.js"
+    ],
+
+    /*
+     *  Paths for the source files to compile/transpile.
+     */
+    compileES6Path    = [HarmonySourceFile   , HarmonySourcesPath    + "**/*.js"],
+    compileTSPath     = [TypeScriptSourceFile, TypeScriptSourcesPath + "**/*.ts"],
+    compileCoffeePath = [CoffeeSourceFile    , CoffeeSourcesPath     + "**/*.coffee"],
+
+    /*
+     *  Files and directories to delete when cleaning the build directory.
+     */
+    cleanAllPath = [
+      buildPath   + "**"         , sourcesPath + "**/*.min.js",
+      sourcesPath + "**/*.min.ts", sourcesPath + "**/*.min.coffee"
+    ],
+    cleanES6Path    = [HarmonyBuildPath   , HarmonySourcesPath    + "*.min.js"],
+    cleanTSPath     = [TypeScriptBuildPath, TypeScriptSourcesPath + "*.min.ts"],
+    cleanCoffeePath = [CoffeeBuildPath    , CoffeeSourcesPath     + "*.min.coffee"],
+
+    /*
+     *  Files that contain the version number.
+     */
+    versionatePath = [pkg, bwr],
+
+    /*
+     *  Source's main file path to bundle.
+     */
+    bundleES6Path    = [HarmonySourceFile],
+    bundleTSPath     = [TypeScriptSourceFile],
+    bundleCoffeePath = [CoffeeSourceFile],
+
+
+    /*____ Functions/Helpers declaration ____*/
+
+    /*
+     *  Sets an alias for an existing task.
+     */
+    _defineSimpleTask = function $TaskAlias (name, callback) {
+      gulp.task(name, function () {
+        gulp.run(callback);
+      });
+    },
+
+    /*
+     *  Clones an Array to avoid Array deletion when using _defineTask (because of Array#shift).
+     */
+    _clone = (function () {
+      var result = [],
+          len = 0,
+          i = 0;
+      return function $ArrayClone (array) {
+        result = [];
+        len = array.length;
+        i = 0;
+        for (; i < array.length; i++) {
+          result.push(array[i]);
+        }
+        return result;
+      }
+    })(),
+
+    /*
+     *  Sets a task with multiple names using _defineSimpleTask.
+     */
+    _defineTask = (function () {
+      var copy = [],
+          task = "",
+          len = 0,
+          i = 0;
+      return function $TaskRegister (names, callback) {
+        if (typeof names === "string") {
+          _defineTask(names.split(", "), callback);
+          return;
+        }
+        copy = _clone(names);
+        task = copy.shift(),
+        len  = copy.length,
+        i = 0;
+        gulp.task(task, callback);
+        for (; i < len; i++) {
+          _defineSimpleTask(copy[i], task);
+        }
+      }
+    })(),
+
+    /*
+     *  Wrapper to use gulp-plumber with file globs.
+     */
+    _plumber = (function () {
+      var errorOcurred = false,
+          error, gulpStream, stream;
+      notify.on("click", function () {
+        if (errorOcurred === true) {
+          open(path.normalize(logfile))
         }
       });
-    notify.on("click", function () {
-      if (errorOcurred) {
-        open(path.normalize("./" + logfile))
-      }
-    });
-    var gulpStream = gulp.src(src)
-      .pipe(plumber({
-        errorHandler: function (errno) {
-          errorOcurred = true;
-          var stream = fs.createWriteStream(logfile);
-          stream.once("open", function () {
-            stream.write(errno.stack || errno.message);
-            stream.end();
-          });
-          error.apply(this, arguments);
-          this.emit("end");
+      return function $PlumberWrapper (src, callback) {
+        errorOcurred = false;
+        error = notify.onError({
+          onLast: true,
+          wait: true,
+          title: "Unexpected error.",
+          message: function () {
+            return "To see the full details click here to open " + logfileName + " file.";
+          }
+        });
+        return function (cb) {
+          gulpStream = gulp.src(src)
+          .pipe(plumber({
+              errorHandler: function (errno) {
+                errorOcurred = true;
+                stream = fs.createWriteStream(logfile);
+                stream.once("open", function () {
+                  stream.write(errno.stack || errno.message);
+                  stream.end();
+                });
+                error.apply(this, arguments);
+                this.emit("end");
+              }
+            }));
+          return callback(cb, gulpStream);
         }
-      }));
-    return callback(cb, gulpStream);
-  };
-};
+      }
+    })();
 
 
+/*________ Task declaration ________*/
 
-//===================================================================================================================================================================================
+
+/*____ Compress task ____*/
 
 /*
- *  Compress the compiled files.
- *  Original name must be "EgaUri.js" and result name will be "EgaUri.min.js".
+ *  Minifies ALL JavaScript files under the build directory.
  */
-defineTask(_clone(compressAllTask), function () {
+_defineTask(compressAllTask, function () {
   gulp.run(compressES6Task[0]);
   gulp.run(compressTSTask[0]);
   gulp.run(compressCoffeeTask[0]);
 });
 
 /*
- *  Compress all HARMONY files (compiled).
+ *  Minifies ALL JavaScript files under the build/Harmony directory.
  */
-defineTask(_clone(compressES6Task), _plumber(compressES6Path, function (cb, gulpStream) {
+_defineTask(compressES6Task, _plumber(compressES6Path, function (cb, gulpStream) {
   return gulpStream
     .pipe(rename({suffix: ".min"}))
     .pipe(uglify({ mangle: false }))
@@ -247,15 +355,15 @@ defineTask(_clone(compressES6Task), _plumber(compressES6Path, function (cb, gulp
     .pipe(gulp.dest(HarmonyBuildPath))
     .pipe(notify({
       onLast: true,
-      title: "Compression finished.",
-      message: "Now you can use the all compressed files (HARMONY)."
+      title: compressTaskTitle,
+      message: sprintf(compressTaskMessage, "ES6")
     }));
 }));
 
 /*
- *  Compress all TYPESCRIPT files (compiled).
+ *  Minifies ALL JavaScript files under the build/TypeScript directory.
  */
-defineTask(_clone(compressTSTask), _plumber(compressTSPath, function (cb, gulpStream) {
+_defineTask(compressTSTask, _plumber(compressTSPath, function (cb, gulpStream) {
   return gulpStream
     .pipe(rename({suffix: ".min"}))
     .pipe(uglify({ mangle: false }))
@@ -263,15 +371,15 @@ defineTask(_clone(compressTSTask), _plumber(compressTSPath, function (cb, gulpSt
     .pipe(gulp.dest(TypeScriptBuildPath))
     .pipe(notify({
       onLast: true,
-      title: "Compression finished.",
-      message: "Now you can use the all compressed files (TYPESCRIPT)."
+      title: compressTaskTitle,
+      message: sprintf(compressTaskMessage, "TypeScript")
     }));
 }));
 
 /*
- *  Compress all COFFEESCRIPT files (compiled).
+ *  Minifies ALL JavaScript files under the build/CoffeeScript directory.
  */
-defineTask(_clone(compressCoffeeTask), _plumber(compressCoffeePath, function (cb, gulpStream) {
+_defineTask(compressCoffeeTask, _plumber(compressCoffeePath, function (cb, gulpStream) {
   return gulpStream
     .pipe(rename({suffix: ".min"}))
     .pipe(uglify({ mangle: false }))
@@ -279,35 +387,42 @@ defineTask(_clone(compressCoffeeTask), _plumber(compressCoffeePath, function (cb
     .pipe(gulp.dest(CoffeeBuildPath))
     .pipe(notify({
       onLast: true,
-      title: "Compression finished.",
-      message: "Now you can use the all compressed files (COFFEESCRIPT)."
+      title: compressTaskTitle,
+      message: sprintf(compressTaskMessage, "CoffeeScript")
     }));
 }));
 
-//===================================================================================================================================================================================
 
+/*____ Hint task ____*/
 
-//========================================================================================================================
-
-defineTask(_clone(hintAllTask), function () {
+/*
+ *  Hints (checks) all JavaScript files and its original sources files.
+ */
+_defineTask(hintAllTask, function () {
   gulp.run(hintES6Task[0]);
   gulp.run(hintTSTask[0]);
   gulp.run(hintCoffeeTask[0]);
 });
 
-defineTask(_clone(hintES6Task), _plumber(hintES6Path, function (cb, gulpStream) {
+/*
+ *  Hints (checks) all Harmony-compiled files and its original sources files.
+ */
+_defineTask(hintES6Task, _plumber(hintES6Path, function (cb, gulpStream) {
   return gulpStream
     .pipe(jshint())
     .pipe(jshint.reporter(stylish))
     .pipe(jshint.reporter("fail"))
     .pipe(notify({
       onLast: true,
-      title: "JavaScript hint finished.",
-      message: "ES6 and ES5 versions has been hinted with jshint."
+      title: hintTaskTitle,
+      message: sprintf(hintTaskMessage, "Harmony", "JSLint")
     }));
 }));
 
-defineTask(_clone(hintTSTask), _plumber(hintTSPath, function (cb, gulpStream) {
+/*
+ *  Hints (checks) all TypeScript-compiled files and its original sources files.
+ */
+_defineTask(hintTSTask, _plumber(hintTSPath, function (cb, gulpStream) {
   return gulpStream
     .pipe(filterJavaScript)
     .pipe(jshint())
@@ -320,108 +435,104 @@ defineTask(_clone(hintTSTask), _plumber(hintTSPath, function (cb, gulpStream) {
     .pipe(filterTypeScript.restore())
     .pipe(notify({
       onLast: true,
-      title: "JavaScript hint finished.",
-      message: "ES6 and ES5 versions has been hinted with jshint."
+      title: hintTaskTitle,
+      message: sprintf(hintTaskMessage, "TypeScript", "JSHint and TSLint")
     }));
 }));
-
-defineTask(_clone(hintCoffeeTask), _plumber(hintCoffeePath, function (cb, gulpStream) {
-  return gulpStream
-  .pipe(filterJavaScript)
-  .pipe(jshint())
-  .pipe(jshint.reporter(stylish))
-  .pipe(jshint.reporter("fail"))
-  .pipe(filterJavaScript.restore())
-  .pipe(filterCoffeeScript)
-  .pipe(coffeelint())
-  .pipe(coffeelint.reporter())
-  .pipe(coffeelint.reporter("fail"))
-  .pipe(filterCoffeeScript.restore())
-  .pipe(notify({
-      onLast: true,
-      title: "JavaScript hint finished.",
-      message: "ES6 and ES5 versions has been hinted with jshint."
-    }));
-}));
-
-//========================================================================================================================
-
-
-
-//===================================================================================
 
 /*
- *  This will remove ALL the files inside src/build directory to allow recompilation.
+ *  Hints (checks) all CoffeeScript-compiled files and its original sources files.
  */
-defineTask(_clone(cleanAllTask), _plumber("./", function (cb, gulpStream) {
+_defineTask(hintCoffeeTask, _plumber(hintCoffeePath, function (cb, gulpStream) {
+  return gulpStream
+    .pipe(filterJavaScript)
+    .pipe(jshint())
+    .pipe(jshint.reporter(stylish))
+    .pipe(jshint.reporter("fail"))
+    .pipe(filterJavaScript.restore())
+    .pipe(filterCoffeeScript)
+    .pipe(coffeelint())
+    .pipe(coffeelint.reporter())
+    .pipe(coffeelint.reporter("fail"))
+    .pipe(filterCoffeeScript.restore())
+    .pipe(notify({
+      onLast: true,
+      title: hintTaskTitle,
+      message: sprintf(hintTaskMessage, "CoffeeScript", "JSHint and CoffeeLint")
+    }));
+}));
+
+
+/*____ Clean task ____*/
+
+/*
+ *  Deletes the whole build directory.
+ */
+_defineTask(cleanAllTask, _plumber(rootPath, function (cb, gulpStream) {
   del(cleanAllPath);
   return gulpStream
     .pipe(notify({
       onLast: true,
-      title: "Project cleaned.",
-      message: "Now you can recompile ALL the sources."
+      title: cleanTaskTitle,
+      message: sprintf(cleanTaskMessage, "Build")
     }));
 }));
 
 /*
- *  This will remove all HARMONY files inside src/build directory to allow recompilation.
+ *  Deletes the whole build/Harmony directory.
  */
-defineTask(_clone(cleanES6Task), _plumber("./", function (cb, gulpStream) {
+_defineTask(cleanES6Task, _plumber(rootPath, function (cb, gulpStream) {
   del(cleanES6Path);
   return gulpStream
     .pipe(notify({
       onLast: true,
-      title: "Project cleaned.",
-      message: "Now you can recompile your HARMONY sources."
+      title: cleanTaskTitle,
+      message: sprintf(cleanTaskMessage, "Harmony-compiled")
     }));
 }));
 
 /*
- *  This will remove all TYPESCRIPT files inside src/build directory to allow recompilation.
+ *  Deletes the whole build/TypeScript directory.
  */
-defineTask(_clone(cleanTSTask), _plumber("./", function (cb, gulpStream) {
+_defineTask(cleanTSTask, _plumber(rootPath, function (cb, gulpStream) {
   del(cleanTSPath);
   return gulpStream
   .pipe(notify({
       onLast: true,
-      title: "Project cleaned.",
-      message: "Now you can recompile your TYPESCRIPT sources."
+      title: cleanTaskTitle,
+      message: sprintf(cleanTaskMessage, "TypeScript-compiled")
     }));
 }));
 
 /*
- *  This will remove all COFFEESCRIPT files inside src/build directory to allow recompilation.
+ *  Deletes the whole build/CoffeeScript directory.
  */
-defineTask(_clone(cleanCoffeeTask), _plumber("./", function (cb, gulpStream) {
+_defineTask(cleanCoffeeTask, _plumber(rootPath, function (cb, gulpStream) {
   del(cleanCoffeePath);
   return gulpStream
     .pipe(notify({
       onLast: true,
-      title: "Project cleaned.",
-      message: "Now you can recompile your COFFEESCRIPT sources."
+      title: cleanTaskTitle,
+      message: sprintf(cleanTaskMessage, "CoffeeScript-compiled")
     }));
 }));
 
-//===================================================================================
 
-
-
-//=======================================================================================================
+/*____ Compile task ____*/
 
 /*
- *  Compress the compiled files.
- *  Original name must be "EgaUri.js" and result name will be "EgaUri.min.js".
+ *  Compiles all source files inside main directory and writes them on build directory.
  */
-defineTask(_clone(compileAllTask), function () {
+_defineTask(compileAllTask, function () {
   gulp.run(compileES6Task[0]);
   gulp.run(compileTSTask[0]);
   gulp.run(compileCoffeeTask[0]);
 });
 
 /*
- *  This will compile all the HARMONY modules to ES5 syntax.
+ *  Compiles all source files inside main/Harmony directory and writes them on build/Harmony directory.
  */
-defineTask(_clone(compileES6Task), _plumber(compileES6Path, function (cb, gulpStream) {
+_defineTask(compileES6Task, _plumber(compileES6Path, function (cb, gulpStream) {
   return gulpStream
     .pipe(sourcemaps.init())
     .pipe(babel({
@@ -431,98 +542,149 @@ defineTask(_clone(compileES6Task), _plumber(compileES6Path, function (cb, gulpSt
     .pipe(gulp.dest(HarmonyBuildPath))
     .pipe(notify({
       onLast: true,
-      title: "Project compiled (HARMONY).",
-      message: "Now you can compress all HARMONY compiled sources and use its source maps."
+      title: compileTaskTitle,
+      message: sprintf(compileTaskMessage, "Harmony")
     }));
 }));
 
 /*
- *  This will compile all the TYPESCRIPT modules to ES3 syntax.
+ *  Compiles all source files inside main/TypeScript directory and writes them on build/TypeScript directory.
  */
-defineTask(_clone(compileTSTask), _plumber(compileTSPath, function (cb, gulpStream) {
-  var tsResult = gulpStream
-  .pipe(sourcemaps.init())
-  .pipe(ts({
-    module: "commonjs"
-  }));
-
-  return tsResult.js.pipe(sourcemaps.write("."))
+_defineTask(compileTSTask, _plumber(compileTSPath, function (cb, gulpStream) {
+  return gulpStream
+    .pipe(sourcemaps.init())
+    .pipe(ts({
+      module: yargs.modules || "commonjs"
+    })).js
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(TypeScriptBuildPath))
     .pipe(notify({
       onLast: true,
-      title: "Project compiled (TYPESCRIPT).",
-      message: "Now you can compress all TYPESCRIPT compiled sources and use its source maps."
+      title: compileTaskTitle,
+      message: sprintf(compileTaskMessage, "TypeScript")
     }));
 }));
 
 /*
- *  This will compile all the COFFEESCRIPT modules to ES3 syntax.
+ *  Compiles all source files inside main/CoffeeScript directory and writes them on build/CoffeeScript directory.
  */
-defineTask(_clone(compileCoffeeTask), _plumber(compileCoffeePath, function (cb, gulpStream) {
+_defineTask(compileCoffeeTask, _plumber(compileCoffeePath, function (cb, gulpStream) {
   return gulpStream
     .pipe(sourcemaps.init())
     .pipe(coffee({
-      bare: true
+      bare: yargs.bare || true
     }))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(CoffeeBuildPath))
     .pipe(notify({
       onLast: true,
-      title: "Project compiled (COFFEESCRIPT).",
-      message: "Now you can compress all COFFEESCRIPT compiled sources and use its source maps."
+      title: compileTaskTitle,
+      message: sprintf(compileTaskMessage, "CoffeeScript")
     }));
 }));
 
-//=======================================================================================================
 
-
+/*____ Versionate task ____*/
 
 /*
- *  This will re-transpile the ES6 code adding 6to5 polyfills and browserify code.
+ *  Changes the version number in both config files (package.json and bower.json).
  */
-/*defineTask(browserTask, function () {
-  browserify(buildFile, { debug: true })
-    .bundle()
-    .on('error', util.log.bind(util, 'Browserify Error'))
-    .pipe(source(fileName + ".js"))
-    .pipe(buffer())
-    .pipe(gulp.dest(browserPath))
+_defineTask(versionateTask, _plumber(versionatePath, function (cb, gulpStream) {
+  var stream = gulpStream
+    .pipe(prompt.prompt({
+      type: "input",
+      name: "version",
+      message: "Your version number in package.json and bower.json is " + npmPkg.version + " and " + bwrPkg.version + " respectively. Which is the new version number?"
+    }, function (res) {
+      stream
+        .pipe(jeditor({
+          "version": res.version
+        }, {
+          "indent_char": " ",
+          "indent_size": 2
+        }))
+        .pipe(gulp.dest(rootPath));
+    }));
+  return stream;
+}));
+
+
+/*____ Watch task ____*/
+
+/*
+ *  Listens for changes in all files (Harmony, TypeScript, CoffeeScript).
+ */
+_defineTask(watchAllTask, function () {
+  gulp.run(watchES6Task[0]);
+  gulp.run(watchTSTask[0]);
+  gulp.run(watchCoffeeTask[0]);
+});
+
+/*
+ *  Watches for changes in all Harmony files and its compiled result.
+ */
+_defineTask(watchES6Task, function () {
+  gulp.watch(HarmonySourceFile              , compileES6Task[0]);
+  gulp.watch(HarmonySourcesPath + "/**/*.js", compileES6Task[0]);
+  gulp.watch(HarmonyBuildFile               , compressES6Task[0]);
+  gulp.watch(HarmonyBuildPath   + "/**/*.js", compressES6Task[0]);
+});
+
+/*
+ *  Watches for changes in all TypeScript files and its compiled result.
+ */
+_defineTask(watchTSTask, function () {
+  gulp.watch(TypeScriptSourceFile              , compileTSTask[0]);
+  gulp.watch(TypeScriptSourcesPath + "/**/*.js", compileTSTask[0]);
+  gulp.watch(TypeScriptBuildFile               , compressTSTask[0]);
+  gulp.watch(TypeScriptBuildPath   + "/**/*.js", compressTSTask[0]);
+});
+
+/*
+ *  Watches for changes in all CoffeeScript files and its compiled result.
+ */
+_defineTask(watchTSTask, function () {
+  gulp.watch(CoffeeSourceFile              , compileCoffeeTask[0]);
+  gulp.watch(CoffeeSourcesPath + "/**/*.js", compileCoffeeTask[0]);
+  gulp.watch(CoffeeBuildFile               , compressCoffeeTask[0]);
+  gulp.watch(CoffeeBuildPath   + "/**/*.js", compressCoffeeTask[0]);
+});
+
+
+/*____ Bundle task ____*/
+
+/*
+ *  Bundles all Harmony files in a single one.
+ */
+_defineTask(bundleES6Task, _plumber(bundleES6Path, function (cb, gulpStream) {
+  return gulpStream
     .pipe(notify({
       onLast: true,
-      title: "Project browserified.",
-      message: "Now you can use the library in a web browser with ES5 compatibility."
+      title: bundleTaskTitle,
+      message: sprintf(compileTaskMessage, "Harmony")
     }));
-});*/
+}));
 
 /*
- *  This will change the version code of all the JSON files (package.json and bower.json).
+ *  Bundles all TypeScript files in a single one.
  */
-/*defineTask(versionTask, function () {
-  var npmPackage = require("./package.json"),
-    bowerPackage = require("./bower.json"),
-    stream = gulp.src(["./package.json", "./bower.json"])
-      .pipe(prompt.prompt({
-        type: "input",
-        name: "version",
-        message: "Your version number in package.json and bower.json is " + npmPackage.version + " and " + bowerPackage.version + " respectively. Which is the new version number?"
-      }, function (res) {
-        stream
-          .pipe(jeditor({
-            "version": res.version
-          }, {
-            "indent_char": " ",
-            "indent_size": 2
-          }))
-          .pipe(gulp.dest("."));
-      }));
-});*/
+_defineTask(bundleTSTask, _plumber(bundleTSPath, function (cb, gulpStream) {
+  return gulpStream
+    .pipe(notify({
+      onLast: true,
+      title: bundleTaskTitle,
+      message: sprintf(compileTaskMessage, "TypeScript")
+    }));
+}));
 
 /*
- *  This will watch for changes in all modules files to execute "compile" task.
- *  Also, it will watch for changes into the bundled file to execute "compress" task.
+ *  Bundles all CoffeeScript files in a single one.
  */
-/*defineTask(_clone(watchTask), function () {
-  gulp.watch(mainFile, [transpileTask[0]]);
-  gulp.watch(modulesPath + "/*.js", [transpileTask[0]]);
-  gulp.watch(buildFile, [browserTask[0]]);
-});*/
+_defineTask(bundleCoffeeTask, _plumber(bundleCoffeePath, function (cb, gulpStream) {
+  return gulpStream
+    .pipe(notify({
+      onLast: true,
+      title: bundleTaskTitle,
+      message: sprintf(compileTaskMessage, "CoffeeScript")
+    }));
+}));

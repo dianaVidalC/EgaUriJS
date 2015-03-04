@@ -1,0 +1,27 @@
+{
+  "name": "ega-uri",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Egatuts/EgaUriJS",
+  "authors": [
+    "EgaTuts <egatuts@gmail.com>"
+  ],
+  "description": "JavaScript URI parser written with Harmony (ES6) and compiled using 6to5 to keep backward compatibility with ES5.",
+  "main": "src/build/EgaUriJS.min.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "uri",
+    "url",
+    "parser",
+    "harmony",
+    "es6"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
