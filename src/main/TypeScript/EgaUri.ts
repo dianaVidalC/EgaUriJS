@@ -1,6 +1,10 @@
 /*
- *  Module imports.
+ *  EgaUri.ts 0.0.1
+ *  http://www.github.com/EgaTuts/EgaUriJS
+ *  (c) 2015 Esaú García Sánchez-Torija (aka EgaTuts) & contributors
+ *  EgaUriJS may be freely distributed under the MIT license.
  */
+
 import Scheme    = require("./modules/Scheme");
 import Subdomain = require("./modules/Subdomain");
 import Domain    = require("./modules/Domain");
@@ -13,9 +17,6 @@ import Fragment  = require("./modules/Fragment");
 
 export class EgaUri {
 
-  /*
-   *  Submodules importing.
-   */
   public static Scheme    = Scheme;
   public static Subdomain = Subdomain;
   public static Domain    = Domain;

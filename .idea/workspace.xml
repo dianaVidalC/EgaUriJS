@@ -2,7 +2,109 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff52fce4-2ef5-4b08-a515-499057c2e40d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\lib\traceur.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\CoffeeScript\EgaUri.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\CoffeeScript\modules\Domain.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\CoffeeScript\modules\Fragment.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\CoffeeScript\modules\Password.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\CoffeeScript\modules\Path.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\CoffeeScript\modules\Port.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\CoffeeScript\modules\Query.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\CoffeeScript\modules\Scheme.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\CoffeeScript\modules\Subdomain.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\CoffeeScript\modules\Username.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\Harmony\EgaUri.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\Harmony\modules\Domain.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\Harmony\modules\Fragment.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\Harmony\modules\Password.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\Harmony\modules\Path.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\Harmony\modules\Port.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\Harmony\modules\Query.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\Harmony\modules\Scheme.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\Harmony\modules\Subdomain.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\Harmony\modules\Username.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\TypeScript\EgaUri.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\TypeScript\modules\Domain.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\TypeScript\modules\Fragment.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\TypeScript\modules\Password.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\TypeScript\modules\Path.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\TypeScript\modules\Port.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\TypeScript\modules\Query.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\TypeScript\modules\Scheme.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\TypeScript\modules\Subdomain.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\src\build\TypeScript\modules\Username.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\tests\Harmony\karma-test\karma-live.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\tests\Harmony\karma-test\sync-loading.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\tests\Harmony\mocha-test\config.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\tests\Harmony\mocha-test\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Esaú\IdeaProjects\EgaUriJS\tests\Harmony\mocha-test\script.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Domain.js.map" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Domain.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Domain.js.map" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Domain.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Domain.js.map" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Domain.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Domain.js" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Domain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Domain.js" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Domain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Domain.js" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Domain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/CoffeeScript/EgaUri.coffee" afterPath="$PROJECT_DIR$/src/main/CoffeeScript/EgaUri.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/EgaUri.js.map" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/EgaUri.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/EgaUri.js.map" afterPath="$PROJECT_DIR$/src/build/Harmony/EgaUri.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/EgaUri.js.map" afterPath="$PROJECT_DIR$/src/build/TypeScript/EgaUri.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/EgaUri.js" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/EgaUri.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/EgaUri.js" afterPath="$PROJECT_DIR$/src/build/Harmony/EgaUri.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/EgaUri.js" afterPath="$PROJECT_DIR$/src/build/TypeScript/EgaUri.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Harmony/EgaUri.js" afterPath="$PROJECT_DIR$/src/main/Harmony/EgaUri.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/EgaUriJS.iml" afterPath="$PROJECT_DIR$/.idea/EgaUriJS.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Fragment.js.map" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Fragment.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Fragment.js.map" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Fragment.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Fragment.js.map" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Fragment.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Fragment.js" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Fragment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Fragment.js" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Fragment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Fragment.js" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Fragment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gulpfile.js" afterPath="$PROJECT_DIR$/Gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Password.js.map" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Password.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Password.js.map" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Password.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Password.js.map" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Password.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Password.js" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Password.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Password.js" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Password.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Password.js" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Password.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Path.js.map" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Path.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Path.js.map" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Path.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Path.js.map" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Path.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Path.js" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Path.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Path.js" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Path.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Path.js" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Path.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Port.js.map" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Port.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Port.js.map" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Port.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Port.js.map" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Port.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Port.js" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Port.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Port.js" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Port.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Port.js" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Port.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Query.js.map" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Query.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Query.js.map" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Query.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Query.js.map" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Query.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Query.js" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Query.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Query.js" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Query.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Query.js" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Query.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Scheme.js.map" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Scheme.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Scheme.js.map" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Scheme.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Scheme.js.map" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Scheme.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Scheme.js" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Scheme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Scheme.js" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Scheme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Scheme.js" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Scheme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Subdomain.js.map" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Subdomain.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Subdomain.js.map" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Subdomain.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Subdomain.js.map" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Subdomain.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Subdomain.js" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Subdomain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Subdomain.js" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Subdomain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Subdomain.js" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Subdomain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Username.js.map" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Username.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Username.js.map" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Username.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Username.js.map" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Username.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Username.js" afterPath="$PROJECT_DIR$/src/build/CoffeeScript/modules/Username.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/Harmony/modules/Username.js" afterPath="$PROJECT_DIR$/src/build/Harmony/modules/Username.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/build/TypeScript/modules/Username.js" afterPath="$PROJECT_DIR$/src/build/TypeScript/modules/Username.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/global-config.js" afterPath="$PROJECT_DIR$/tests/global-config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulp-tasks.log" afterPath="$PROJECT_DIR$/gulp-tasks.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/test" afterPath="$PROJECT_DIR$/tools/test" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,28 +132,7 @@
     <favorites_list name="EgaUriJS" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Harmony-live.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/KarmaJS-config/Harmony-live.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="1343">
-              <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tools/test">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23101519" vertical-offset="0" max-vertical-offset="1251">
-              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -124,57 +205,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/build/browser/EgaUri.js.map" />
-        <option value="$PROJECT_DIR$/src/build/modules/Scheme.min.js" />
-        <option value="$PROJECT_DIR$/src/build/EgaUri.min.js" />
-        <option value="$PROJECT_DIR$/bower.json" />
-        <option value="$PROJECT_DIR$/Gulpfile.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/mocha.css" />
-        <option value="$PROJECT_DIR$/src/tests/local/mocha.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/mocha.min.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/chai.min.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/es6-module-loader.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/es6-module-loader.min.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/system.min.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/conig.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/vendor/traceur.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/index.html" />
-        <option value="$PROJECT_DIR$/src/tests/local/vendor/6to5.min.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/config.js" />
-        <option value="$PROJECT_DIR$/src/tests/local/script.js" />
-        <option value="$PROJECT_DIR$/src/main/EgaUri.js" />
-        <option value="$PROJECT_DIR$/tests/config.js" />
-        <option value="$PROJECT_DIR$/tests/TypeScript/config.js" />
-        <option value="$PROJECT_DIR$/tests/Harmony/index.html" />
-        <option value="$PROJECT_DIR$/tests/TypeScript/script.js" />
-        <option value="$PROJECT_DIR$/tests/karma/Harmony-live.js" />
-        <option value="$PROJECT_DIR$/testing.js" />
-        <option value="$PROJECT_DIR$/tests/Harmony/config.js" />
-        <option value="$PROJECT_DIR$/tests/lib/6to5.min.js" />
-        <option value="$PROJECT_DIR$/tests/Harmony/prueba.js" />
-        <option value="$PROJECT_DIR$/tests/Harmony/script.js" />
-        <option value="$PROJECT_DIR$/tests/Harmony/testing-es6.js" />
-        <option value="$PROJECT_DIR$/tests/karma-config/Harmony-live.js" />
-        <option value="$PROJECT_DIR$/src/main/Harmony/modules/Scheme.js" />
+        <option value="$PROJECT_DIR$/tests/Harmony/mocha-test/script.js" />
+        <option value="$PROJECT_DIR$/tests/KarmaJS-config/Harmony-live.js" />
+        <option value="$PROJECT_DIR$/tests/Harmony/karma-test/karma-live.js" />
+        <option value="$PROJECT_DIR$/src/main/Dart/modules/Domain.dart" />
+        <option value="$PROJECT_DIR$/src/main/Dart/modules/Fragment.dart" />
+        <option value="$PROJECT_DIR$/src/main/Dart/modules/Password.dart" />
+        <option value="$PROJECT_DIR$/src/main/Dart/modules/Path.dart" />
+        <option value="$PROJECT_DIR$/src/main/Dart/modules/Port.dart" />
+        <option value="$PROJECT_DIR$/src/main/Dart/modules/Query.dart" />
+        <option value="$PROJECT_DIR$/src/main/Dart/modules/Scheme.dart" />
+        <option value="$PROJECT_DIR$/src/main/Dart/modules/Subdomain.dart" />
+        <option value="$PROJECT_DIR$/src/main/Dart/modules/Username.dart" />
+        <option value="$PROJECT_DIR$/src/main/Dart/EgaUri.dart" />
         <option value="$PROJECT_DIR$/src/main/Harmony/modules/Domain.js" />
         <option value="$PROJECT_DIR$/src/main/Harmony/modules/Fragment.js" />
         <option value="$PROJECT_DIR$/src/main/Harmony/modules/Password.js" />
         <option value="$PROJECT_DIR$/src/main/Harmony/modules/Path.js" />
         <option value="$PROJECT_DIR$/src/main/Harmony/modules/Port.js" />
         <option value="$PROJECT_DIR$/src/main/Harmony/modules/Query.js" />
+        <option value="$PROJECT_DIR$/src/main/Harmony/modules/Scheme.js" />
         <option value="$PROJECT_DIR$/src/main/Harmony/modules/Subdomain.js" />
         <option value="$PROJECT_DIR$/src/main/Harmony/modules/Username.js" />
-        <option value="$PROJECT_DIR$/src/main/Harmony/EgaUri.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/tests/Harmony/karma-live.js" />
-        <option value="$PROJECT_DIR$/tests/Harmony/sync-loading.js" />
-        <option value="$PROJECT_DIR$/tests/Harmony/mocha-test/index.html" />
-        <option value="$PROJECT_DIR$/tests/global-config.js" />
-        <option value="$PROJECT_DIR$/tests/Harmony/mocha-test/config.js" />
-        <option value="$PROJECT_DIR$/tests/Harmony/mocha-test/script.js" />
-        <option value="$PROJECT_DIR$/tests/KarmaJS-config/Harmony-live.js" />
-        <option value="$PROJECT_DIR$/tests/Harmony/karma-test/karma-live.js" />
+        <option value="$PROJECT_DIR$/src/main/TypeScript/modules/Domain.ts" />
+        <option value="$PROJECT_DIR$/src/main/TypeScript/modules/Fragment.ts" />
+        <option value="$PROJECT_DIR$/src/main/TypeScript/modules/Password.ts" />
+        <option value="$PROJECT_DIR$/src/main/TypeScript/modules/Path.ts" />
+        <option value="$PROJECT_DIR$/src/main/TypeScript/modules/Port.ts" />
+        <option value="$PROJECT_DIR$/src/main/TypeScript/modules/Scheme.ts" />
+        <option value="$PROJECT_DIR$/src/main/TypeScript/modules/Query.ts" />
+        <option value="$PROJECT_DIR$/src/main/TypeScript/modules/Subdomain.ts" />
+        <option value="$PROJECT_DIR$/src/main/TypeScript/modules/Username.ts" />
+        <option value="$PROJECT_DIR$/src/main/TypeScript/EgaUri.ts" />
+        <option value="$PROJECT_DIR$/src/main/CoffeeScript/modules/Domain.coffee" />
+        <option value="$PROJECT_DIR$/src/main/CoffeeScript/modules/Fragment.coffee" />
+        <option value="$PROJECT_DIR$/src/main/CoffeeScript/modules/Password.coffee" />
+        <option value="$PROJECT_DIR$/src/main/CoffeeScript/modules/Path.coffee" />
+        <option value="$PROJECT_DIR$/src/main/CoffeeScript/modules/Port.coffee" />
+        <option value="$PROJECT_DIR$/src/main/CoffeeScript/modules/Query.coffee" />
+        <option value="$PROJECT_DIR$/src/main/CoffeeScript/modules/Scheme.coffee" />
+        <option value="$PROJECT_DIR$/src/main/CoffeeScript/modules/Subdomain.coffee" />
+        <option value="$PROJECT_DIR$/src/main/CoffeeScript/modules/Username.coffee" />
         <option value="$PROJECT_DIR$/tools/test" />
+        <option value="$PROJECT_DIR$/src/build/Harmony/EgaUri.js" />
+        <option value="$PROJECT_DIR$/gulp-tasks.log" />
+        <option value="$PROJECT_DIR$/tests/Harmony-bundle/mocha-test/config.js" />
+        <option value="$PROJECT_DIR$/tests/global-config.js" />
+        <option value="$PROJECT_DIR$/src/main/Harmony/EgaUri.js" />
+        <option value="$PROJECT_DIR$/tests/Harmony-bundle/mocha-test/script.js" />
+        <option value="$PROJECT_DIR$/src/main/CoffeeScript/EgaUri.coffee" />
+        <option value="$PROJECT_DIR$/Gulpfile.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -188,25 +269,169 @@
             <task-name>compress</task-name>
           </GulpTaskState>
           <GulpTaskState>
+            <task-name>compress-all</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
             <task-name>minify</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>minify-all</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>optimize</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>optimize-all</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compress-es6</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compress-harmony</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>minify-es6</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>minify-harmony</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>optimize-es6</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>optimize-harmony</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compress-ts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compress-typescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>minify-ts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>minify-typescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>optimize-ts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>optimize-typescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compress-coffee</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compress-coffeescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>minify-coffee</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>minify-coffeescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>optimize-coffee</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>optimize-coffeescript</task-name>
           </GulpTaskState>
           <GulpTaskState>
             <task-name>hint</task-name>
           </GulpTaskState>
           <GulpTaskState>
+            <task-name>hint-all</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
             <task-name>check</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>check-all</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>hint-es6</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>hint-harmony</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>check-es6</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>check-harmony</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>hint-ts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>hint-typescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>check-ts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>check-typescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>hint-coffee</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>hint-coffeescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>check-coffee</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>check-coffeescript</task-name>
           </GulpTaskState>
           <GulpTaskState>
             <task-name>clean</task-name>
           </GulpTaskState>
           <GulpTaskState>
-            <task-name>transpile</task-name>
+            <task-name>clean-all</task-name>
           </GulpTaskState>
           <GulpTaskState>
-            <task-name>browserify</task-name>
+            <task-name>clean-es6</task-name>
           </GulpTaskState>
           <GulpTaskState>
-            <task-name>browser-support</task-name>
+            <task-name>clean-harmony</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean-ts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean-typescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean-coffee</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean-coffeescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile-all</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile-es6</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile-harmony</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile-ts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile-typescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile-coffee</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile-coffeescript</task-name>
           </GulpTaskState>
           <GulpTaskState>
             <task-name>versionate</task-name>
@@ -215,7 +440,55 @@
             <task-name>watch</task-name>
           </GulpTaskState>
           <GulpTaskState>
+            <task-name>watch-all</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
             <task-name>observe</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>observe-all</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>watch-es6</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>watch-harmony</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>observe-es6</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>observe-harmony</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>watch-ts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>watch-typescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>observe-ts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>observe-typescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bundle-es6</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bundle-harmony</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bundle-ts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bundle-typescript</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bundle-coffee</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bundle-coffeescript</task-name>
           </GulpTaskState>
         </tasks>
       </GulpfileState>
@@ -298,6 +571,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,20 +581,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EgaUriJS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EgaUriJS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,16 +593,18 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/gulp" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="JavaScriptLanguageLevel" value="ES6" />
     <property name="JavaScriptPreferStrict" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="options.lastSelected" value="terminal" />
+    <property name="options.lastSelected" value="preferences.sourceCode.JavaScript" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="js.buildTools.gulp.node_interpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="C:\Users\Esaú\IdeaProjects\EgaUriJS\node_modules\gulp" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -658,12 +923,21 @@
       <workItem from="1425031035500" duration="4068000" />
       <workItem from="1425038491036" duration="11513000" />
       <workItem from="1425068788409" duration="3842000" />
-      <workItem from="1425116160416" duration="2200000" />
+      <workItem from="1425116160416" duration="27244000" />
+      <workItem from="1425212265440" duration="9139000" />
+      <workItem from="1425302866995" duration="1642000" />
+      <workItem from="1425416039942" duration="944000" />
+      <workItem from="1425417038933" duration="3147000" />
+      <workItem from="1425480058652" duration="1636000" />
+      <workItem from="1425481795373" duration="3268000" />
+      <workItem from="1425485232526" duration="5073000" />
+      <workItem from="1425497484692" duration="10130000" />
+      <workItem from="1425566735489" duration="4769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116921000" />
+    <option name="totallyTimeSpent" value="181713000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1280" height="1400" extended-state="0" />
@@ -679,10 +953,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990506" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30775318" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18354431" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30775318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18354431" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28085443" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -690,12 +965,11 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -717,7 +991,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -726,137 +1000,291 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/KarmaJS-config/Harmony-live.js">
+    <entry file="file://$PROJECT_DIR$/Gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1343">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Harmony/karma-test/karma-live.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="272">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/KarmaJS-config/Harmony-live.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="41" max-vertical-offset="1377">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Harmony/mocha-test/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6239">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Harmony/mocha-test/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#892#916#0" expanded="false" />
+            <element signature="e#2058#2115#0" expanded="false" />
+            <element signature="e#3404#3512#0" expanded="false" />
+            <element signature="e#4048#4164#0" expanded="false" />
+            <element signature="e#4412#4489#0" expanded="false" />
+            <element signature="e#4717#4830#0" expanded="false" />
+            <element signature="e#5066#5164#0" expanded="false" />
+            <element signature="e#5207#5280#0" expanded="false" />
+            <element signature="e#5680#5747#0" expanded="false" />
+            <element signature="e#7007#7207#0" expanded="false" />
+            <element signature="e#7226#7589#0" expanded="false" />
+            <element signature="e#7608#8039#0" expanded="false" />
+            <element signature="e#8062#8398#0" expanded="false" />
+            <element signature="e#8405#8480#0" expanded="false" />
+            <element signature="e#8503#8658#0" expanded="false" />
+            <element signature="e#8681#8848#0" expanded="false" />
+            <element signature="e#8875#9026#0" expanded="false" />
+            <element signature="e#9033#9100#0" expanded="false" />
+            <element signature="e#9359#9444#0" expanded="false" />
+            <element signature="e#9464#9602#0" expanded="false" />
+            <element signature="e#9856#9913#0" expanded="false" />
+            <element signature="e#9952#10005#0" expanded="false" />
+            <element signature="e#10195#10249#0" expanded="false" />
+            <element signature="e#10311#10392#0" expanded="false" />
+            <element signature="e#10399#10506#0" expanded="false" />
+            <element signature="e#10533#10821#0" expanded="false" />
+            <element signature="e#10831#10906#0" expanded="false" />
+            <element signature="e#10938#11430#0" expanded="false" />
+            <element signature="e#11440#11503#0" expanded="false" />
+            <element signature="e#11532#12667#0" expanded="false" />
+            <element signature="e#12744#12811#0" expanded="false" />
+            <element signature="e#12853#12954#0" expanded="false" />
+            <element signature="e#12958#13033#0" expanded="false" />
+            <element signature="e#13115#13407#0" expanded="false" />
+            <element signature="e#13412#13490#0" expanded="false" />
+            <element signature="e#13570#13872#0" expanded="false" />
+            <element signature="e#13877#13957#0" expanded="false" />
+            <element signature="e#14045#14345#0" expanded="false" />
+            <element signature="e#14376#14454#0" expanded="false" />
+            <element signature="e#14492#14581#0" expanded="false" />
+            <element signature="e#14585#14669#0" expanded="false" />
+            <element signature="e#14743#14994#0" expanded="false" />
+            <element signature="e#14999#15086#0" expanded="false" />
+            <element signature="e#15158#15611#0" expanded="false" />
+            <element signature="e#15616#15705#0" expanded="false" />
+            <element signature="e#15785#16288#0" expanded="false" />
+            <element signature="e#16320#16365#0" expanded="false" />
+            <element signature="e#16437#16608#0" expanded="false" />
+            <element signature="e#16613#16666#0" expanded="false" />
+            <element signature="e#16738#16920#0" expanded="false" />
+            <element signature="e#16925#16981#0" expanded="false" />
+            <element signature="e#17052#17234#0" expanded="false" />
+            <element signature="e#17239#17297#0" expanded="false" />
+            <element signature="e#17372#17562#0" expanded="false" />
+            <element signature="e#17596#17690#0" expanded="false" />
+            <element signature="e#17731#17829#0" expanded="false" />
+            <element signature="e#17833#17943#0" expanded="false" />
+            <element signature="e#18023#18330#0" expanded="false" />
+            <element signature="e#18335#18451#0" expanded="false" />
+            <element signature="e#18529#18860#0" expanded="false" />
+            <element signature="e#18865#18985#0" expanded="false" />
+            <element signature="e#19071#19390#0" expanded="false" />
+            <element signature="e#19427#19516#0" expanded="false" />
+            <element signature="e#19596#20101#0" expanded="false" />
+            <element signature="e#20133#20213#0" expanded="false" />
+            <element signature="e#20252#20344#0" expanded="false" />
+            <element signature="e#20348#20424#0" expanded="false" />
+            <element signature="e#20463#20732#0" expanded="false" />
+            <element signature="e#20736#20815#0" expanded="false" />
+            <element signature="e#20853#21130#0" expanded="false" />
+            <element signature="e#21134#21215#0" expanded="false" />
+            <element signature="e#21253#21530#0" expanded="false" />
+            <element signature="e#21562#21615#0" expanded="false" />
+            <element signature="e#21693#22190#0" expanded="false" />
+            <element signature="e#22195#22251#0" expanded="false" />
+            <element signature="e#22327#22837#0" expanded="false" />
+            <element signature="e#22842#22900#0" expanded="false" />
+            <element signature="e#22984#23498#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4726">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9571">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#892#916#0" expanded="false" />
+            <element signature="e#2058#2115#0" expanded="false" />
+            <element signature="e#3404#3512#0" expanded="false" />
+            <element signature="e#4048#4164#0" expanded="false" />
+            <element signature="e#4412#4489#0" expanded="false" />
+            <element signature="e#4717#4830#0" expanded="false" />
+            <element signature="e#5066#5164#0" expanded="false" />
+            <element signature="e#5207#5280#0" expanded="false" />
+            <element signature="e#5680#5747#0" expanded="false" />
+            <element signature="e#7007#7207#0" expanded="false" />
+            <element signature="e#7226#7589#0" expanded="false" />
+            <element signature="e#7608#8039#0" expanded="false" />
+            <element signature="e#8062#8398#0" expanded="false" />
+            <element signature="e#8405#8480#0" expanded="false" />
+            <element signature="e#8503#8658#0" expanded="false" />
+            <element signature="e#8681#8848#0" expanded="false" />
+            <element signature="e#8875#9026#0" expanded="false" />
+            <element signature="e#9033#9100#0" expanded="false" />
+            <element signature="e#9359#9444#0" expanded="false" />
+            <element signature="e#9464#9602#0" expanded="false" />
+            <element signature="e#9856#9913#0" expanded="false" />
+            <element signature="e#9952#10005#0" expanded="false" />
+            <element signature="e#10195#10249#0" expanded="false" />
+            <element signature="e#10311#10392#0" expanded="false" />
+            <element signature="e#10399#10506#0" expanded="false" />
+            <element signature="e#10533#10821#0" expanded="false" />
+            <element signature="e#10831#10906#0" expanded="false" />
+            <element signature="e#10938#11430#0" expanded="false" />
+            <element signature="e#11440#11503#0" expanded="false" />
+            <element signature="e#11532#12667#0" expanded="false" />
+            <element signature="e#12744#12811#0" expanded="false" />
+            <element signature="e#12853#12954#0" expanded="false" />
+            <element signature="e#12958#13033#0" expanded="false" />
+            <element signature="e#13115#13407#0" expanded="false" />
+            <element signature="e#13412#13490#0" expanded="false" />
+            <element signature="e#13570#13872#0" expanded="false" />
+            <element signature="e#13877#13957#0" expanded="false" />
+            <element signature="e#14045#14345#0" expanded="false" />
+            <element signature="e#14376#14454#0" expanded="false" />
+            <element signature="e#14492#14581#0" expanded="false" />
+            <element signature="e#14585#14669#0" expanded="false" />
+            <element signature="e#14743#14994#0" expanded="false" />
+            <element signature="e#14999#15086#0" expanded="false" />
+            <element signature="e#15158#15611#0" expanded="false" />
+            <element signature="e#15616#15705#0" expanded="false" />
+            <element signature="e#15785#16288#0" expanded="false" />
+            <element signature="e#16320#16365#0" expanded="false" />
+            <element signature="e#16437#16608#0" expanded="false" />
+            <element signature="e#16613#16666#0" expanded="false" />
+            <element signature="e#16738#16920#0" expanded="false" />
+            <element signature="e#16925#16981#0" expanded="false" />
+            <element signature="e#17052#17234#0" expanded="false" />
+            <element signature="e#17239#17297#0" expanded="false" />
+            <element signature="e#17372#17562#0" expanded="false" />
+            <element signature="e#17596#17690#0" expanded="false" />
+            <element signature="e#17731#17829#0" expanded="false" />
+            <element signature="e#17833#17943#0" expanded="false" />
+            <element signature="e#18023#18330#0" expanded="false" />
+            <element signature="e#18335#18451#0" expanded="false" />
+            <element signature="e#18529#18860#0" expanded="false" />
+            <element signature="e#18865#18985#0" expanded="false" />
+            <element signature="e#19071#19390#0" expanded="false" />
+            <element signature="e#19427#19516#0" expanded="false" />
+            <element signature="e#19596#20101#0" expanded="false" />
+            <element signature="e#20133#20213#0" expanded="false" />
+            <element signature="e#20252#20344#0" expanded="false" />
+            <element signature="e#20348#20424#0" expanded="false" />
+            <element signature="e#20463#20732#0" expanded="false" />
+            <element signature="e#20736#20815#0" expanded="false" />
+            <element signature="e#20853#21130#0" expanded="false" />
+            <element signature="e#21134#21215#0" expanded="false" />
+            <element signature="e#21253#21530#0" expanded="false" />
+            <element signature="e#21562#21615#0" expanded="false" />
+            <element signature="e#21693#22190#0" expanded="false" />
+            <element signature="e#22195#22251#0" expanded="false" />
+            <element signature="e#22327#22837#0" expanded="false" />
+            <element signature="e#22842#22900#0" expanded="false" />
+            <element signature="e#22984#23498#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/EgaUri.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="544">
-          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="561">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/tests/global-config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="1258">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="289">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/global-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="289">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="671" max-vertical-offset="4454">
-          <caret line="245" column="0" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="7725" max-vertical-offset="9894">
+          <caret line="468" column="82" selection-start-line="468" selection-start-column="82" selection-end-line="468" selection-end-column="82" />
+          <folding>
+            <element signature="e#892#916#0" expanded="false" />
+            <element signature="e#2058#2115#0" expanded="false" />
+            <element signature="e#3404#3512#0" expanded="false" />
+            <element signature="e#4048#4164#0" expanded="false" />
+            <element signature="e#4412#4489#0" expanded="false" />
+            <element signature="e#4717#4830#0" expanded="false" />
+            <element signature="e#5066#5164#0" expanded="false" />
+            <element signature="e#5207#5280#0" expanded="false" />
+            <element signature="e#5680#5747#0" expanded="false" />
+            <element signature="e#7007#7207#0" expanded="false" />
+            <element signature="e#7226#7589#0" expanded="false" />
+            <element signature="e#7608#8039#0" expanded="false" />
+            <element signature="e#8062#8398#0" expanded="false" />
+            <element signature="e#8405#8480#0" expanded="false" />
+            <element signature="e#8503#8658#0" expanded="false" />
+            <element signature="e#8681#8848#0" expanded="false" />
+            <element signature="e#8875#9026#0" expanded="false" />
+            <element signature="e#9033#9100#0" expanded="false" />
+            <element signature="e#9359#9444#0" expanded="false" />
+            <element signature="e#9464#9602#0" expanded="false" />
+            <element signature="e#9856#9913#0" expanded="false" />
+            <element signature="e#9952#10005#0" expanded="false" />
+            <element signature="e#10195#10249#0" expanded="false" />
+            <element signature="e#10311#10392#0" expanded="false" />
+            <element signature="e#10399#10506#0" expanded="false" />
+            <element signature="e#10533#10821#0" expanded="false" />
+            <element signature="e#10831#10906#0" expanded="false" />
+            <element signature="e#10938#11430#0" expanded="false" />
+            <element signature="e#11440#11503#0" expanded="false" />
+            <element signature="e#11532#12667#0" expanded="false" />
+            <element signature="e#12744#12811#0" expanded="false" />
+            <element signature="e#12853#12954#0" expanded="false" />
+            <element signature="e#12958#13033#0" expanded="false" />
+            <element signature="e#13115#13407#0" expanded="false" />
+            <element signature="e#13412#13490#0" expanded="false" />
+            <element signature="e#13570#13872#0" expanded="false" />
+            <element signature="e#13877#13957#0" expanded="false" />
+            <element signature="e#14045#14345#0" expanded="false" />
+            <element signature="e#14376#14454#0" expanded="false" />
+            <element signature="e#14492#14581#0" expanded="false" />
+            <element signature="e#14585#14669#0" expanded="false" />
+            <element signature="e#14743#14994#0" expanded="false" />
+            <element signature="e#14999#15086#0" expanded="false" />
+            <element signature="e#15158#15611#0" expanded="false" />
+            <element signature="e#15616#15705#0" expanded="false" />
+            <element signature="e#15785#16288#0" expanded="false" />
+            <element signature="e#16320#16365#0" expanded="false" />
+            <element signature="e#16437#16608#0" expanded="false" />
+            <element signature="e#16613#16666#0" expanded="false" />
+            <element signature="e#16738#16920#0" expanded="false" />
+            <element signature="e#16925#16981#0" expanded="false" />
+            <element signature="e#17052#17234#0" expanded="false" />
+            <element signature="e#17239#17297#0" expanded="false" />
+            <element signature="e#17372#17562#0" expanded="false" />
+            <element signature="e#17596#17690#0" expanded="false" />
+            <element signature="e#17731#17829#0" expanded="false" />
+            <element signature="e#17833#17943#0" expanded="false" />
+            <element signature="e#18023#18330#0" expanded="false" />
+            <element signature="e#18335#18451#0" expanded="false" />
+            <element signature="e#18529#18860#0" expanded="false" />
+            <element signature="e#18865#18985#0" expanded="false" />
+            <element signature="e#19071#19390#0" expanded="false" />
+            <element signature="e#19427#19516#0" expanded="false" />
+            <element signature="e#19596#20101#0" expanded="false" />
+            <element signature="e#20133#20213#0" expanded="false" />
+            <element signature="e#20252#20344#0" expanded="false" />
+            <element signature="e#20348#20424#0" expanded="false" />
+            <element signature="e#20463#20732#0" expanded="false" />
+            <element signature="e#20736#20815#0" expanded="false" />
+            <element signature="e#20853#21130#0" expanded="false" />
+            <element signature="e#21134#21215#0" expanded="false" />
+            <element signature="e#21253#21530#0" expanded="false" />
+            <element signature="e#21562#21615#0" expanded="false" />
+            <element signature="e#21693#22190#0" expanded="false" />
+            <element signature="e#22195#22251#0" expanded="false" />
+            <element signature="e#22327#22837#0" expanded="false" />
+            <element signature="e#22842#22900#0" expanded="false" />
+            <element signature="e#22984#23498#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/EgaUri.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulp-tasks.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gradle/2.1/taskArtifacts/cache.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gradle/2.1/taskArtifacts/cache.properties.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1251">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/EgaUriJS.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1251">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/copyright/profiles_settings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/.name">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.847322" vertical-offset="16072" max-vertical-offset="17323">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -872,13 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="8259" max-vertical-offset="9384">
           <caret line="502" column="91" selection-start-line="502" selection-start-column="91" selection-end-line="502" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/require.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40767387" vertical-offset="0" max-vertical-offset="1251">
-          <caret line="30" column="228" selection-start-line="30" selection-start-column="228" selection-end-line="30" selection-end-column="228" />
         </state>
       </provider>
     </entry>
@@ -903,76 +1324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/traceur.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20383693" vertical-offset="0" max-vertical-offset="1251">
-          <caret line="15" column="64" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="12275" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Fragment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Password.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Path.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Port.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Query.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Scheme.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Subdomain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Username.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Domain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/static-server">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
@@ -980,89 +1331,350 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.722449" vertical-offset="67" max-vertical-offset="1292">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Harmony/EgaUri.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33623418" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Harmony/mocha-test/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026898734" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Harmony/karma-test/sync-loading.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Harmony/mocha-test/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22863925" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Harmony/mocha-test/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15105008" vertical-offset="0" max-vertical-offset="1238">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/global-config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Harmony/karma-test/karma-live.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1210443" vertical-offset="0" max-vertical-offset="1700">
-          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10871303" vertical-offset="561" max-vertical-offset="4726">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3469388" vertical-offset="0" max-vertical-offset="1225">
-          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/KarmaJS-config/Harmony-live.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="1343">
+        <state vertical-scroll-proportion="0.27657872" vertical-offset="79" max-vertical-offset="1343">
           <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Domain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Fragment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Password.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Path.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Port.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Scheme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Subdomain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/modules/Username.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TypeScript/modules/Fragment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TypeScript/modules/Password.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TypeScript/modules/Path.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TypeScript/modules/Port.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TypeScript/modules/Scheme.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TypeScript/modules/Query.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TypeScript/modules/Subdomain.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TypeScript/modules/Username.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CoffeeScript/modules/Domain.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CoffeeScript/modules/Fragment.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CoffeeScript/modules/Password.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CoffeeScript/modules/Path.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CoffeeScript/modules/Port.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CoffeeScript/modules/Query.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CoffeeScript/modules/Scheme.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CoffeeScript/modules/Subdomain.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CoffeeScript/modules/Username.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/test">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23101519" vertical-offset="0" max-vertical-offset="1251">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.1902478" vertical-offset="0" max-vertical-offset="1251">
+          <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulp-tasks.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/require.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08153477" vertical-offset="0" max-vertical-offset="1251">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TypeScript/modules/Domain.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34329563" vertical-offset="0" max-vertical-offset="1238">
+          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TypeScript/EgaUri.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Harmony/EgaUri.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36313292" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/global-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1210443" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5403676" vertical-offset="52" max-vertical-offset="5083">
+          <caret line="254" column="0" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
+          <folding>
+            <element signature="e#892#916#0" expanded="false" />
+            <element signature="e#2058#2115#0" expanded="false" />
+            <element signature="e#3404#3512#0" expanded="false" />
+            <element signature="e#4048#4164#0" expanded="false" />
+            <element signature="e#4412#4489#0" expanded="false" />
+            <element signature="e#4717#4830#0" expanded="false" />
+            <element signature="e#5066#5164#0" expanded="false" />
+            <element signature="e#5207#5280#0" expanded="false" />
+            <element signature="e#5680#5747#0" expanded="false" />
+            <element signature="e#7007#7207#0" expanded="false" />
+            <element signature="e#7226#7589#0" expanded="false" />
+            <element signature="e#7608#8039#0" expanded="false" />
+            <element signature="e#8062#8398#0" expanded="false" />
+            <element signature="e#8405#8480#0" expanded="false" />
+            <element signature="e#8503#8658#0" expanded="false" />
+            <element signature="e#8681#8848#0" expanded="false" />
+            <element signature="e#8875#9026#0" expanded="false" />
+            <element signature="e#9033#9100#0" expanded="false" />
+            <element signature="e#9359#9444#0" expanded="false" />
+            <element signature="e#9464#9602#0" expanded="false" />
+            <element signature="e#9856#9913#0" expanded="false" />
+            <element signature="e#9952#10005#0" expanded="false" />
+            <element signature="e#10195#10249#0" expanded="false" />
+            <element signature="e#10311#10392#0" expanded="false" />
+            <element signature="e#10399#10506#0" expanded="false" />
+            <element signature="e#10533#10821#0" expanded="false" />
+            <element signature="e#10831#10906#0" expanded="false" />
+            <element signature="e#10938#11430#0" expanded="false" />
+            <element signature="e#11440#11503#0" expanded="false" />
+            <element signature="e#11532#12667#0" expanded="false" />
+            <element signature="e#12744#12811#0" expanded="false" />
+            <element signature="e#12853#12954#0" expanded="false" />
+            <element signature="e#12958#13033#0" expanded="false" />
+            <element signature="e#13115#13407#0" expanded="false" />
+            <element signature="e#13412#13490#0" expanded="false" />
+            <element signature="e#13570#13872#0" expanded="false" />
+            <element signature="e#13877#13957#0" expanded="false" />
+            <element signature="e#14045#14345#0" expanded="false" />
+            <element signature="e#14376#14454#0" expanded="false" />
+            <element signature="e#14492#14581#0" expanded="false" />
+            <element signature="e#14585#14669#0" expanded="false" />
+            <element signature="e#14743#14994#0" expanded="false" />
+            <element signature="e#14999#15086#0" expanded="false" />
+            <element signature="e#15158#15611#0" expanded="false" />
+            <element signature="e#15616#15705#0" expanded="false" />
+            <element signature="e#15785#16288#0" expanded="false" />
+            <element signature="e#16320#16365#0" expanded="false" />
+            <element signature="e#16437#16608#0" expanded="false" />
+            <element signature="e#16613#16666#0" expanded="false" />
+            <element signature="e#16738#16920#0" expanded="false" />
+            <element signature="e#16925#16981#0" expanded="false" />
+            <element signature="e#17052#17234#0" expanded="false" />
+            <element signature="e#17239#17297#0" expanded="false" />
+            <element signature="e#17372#17562#0" expanded="false" />
+            <element signature="e#17596#17690#0" expanded="false" />
+            <element signature="e#17731#17829#0" expanded="false" />
+            <element signature="e#17833#17943#0" expanded="false" />
+            <element signature="e#18023#18330#0" expanded="false" />
+            <element signature="e#18335#18451#0" expanded="false" />
+            <element signature="e#18529#18860#0" expanded="false" />
+            <element signature="e#18865#18985#0" expanded="false" />
+            <element signature="e#19071#19390#0" expanded="false" />
+            <element signature="e#19427#19516#0" expanded="false" />
+            <element signature="e#19596#20101#0" expanded="false" />
+            <element signature="e#20133#20213#0" expanded="false" />
+            <element signature="e#20252#20344#0" expanded="false" />
+            <element signature="e#20348#20424#0" expanded="false" />
+            <element signature="e#20463#20732#0" expanded="false" />
+            <element signature="e#20736#20815#0" expanded="false" />
+            <element signature="e#20853#21130#0" expanded="false" />
+            <element signature="e#21134#21215#0" expanded="false" />
+            <element signature="e#21253#21530#0" expanded="false" />
+            <element signature="e#21562#21615#0" expanded="false" />
+            <element signature="e#21693#22190#0" expanded="false" />
+            <element signature="e#22195#22251#0" expanded="false" />
+            <element signature="e#22327#22837#0" expanded="false" />
+            <element signature="e#22842#22900#0" expanded="false" />
+            <element signature="e#22984#23498#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CoffeeScript/EgaUri.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14794303" vertical-offset="0" max-vertical-offset="1264">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8764136" vertical-offset="241" max-vertical-offset="1479">
+          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
           <folding />
         </state>
       </provider>
