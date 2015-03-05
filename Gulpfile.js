@@ -44,6 +44,11 @@ var gulp       = require("gulp"),
     coffeelint = require("gulp-coffeelint"),
     yargs      = require("yargs").argv,
     sprintf    = require("sprintf-js").sprintf,
+    transform  = require("vinyl-transform"),
+    browserify = require("browserify"),
+    tsifier    = require("typescriptifier"),
+    coffeeify  = require("coffeeify"),
+    babelify   = require("babelify"),
 
     /*
      *  Stream filter based on file extension.
@@ -657,8 +662,20 @@ _defineTask(watchTSTask, function () {
  *  Bundles all Harmony files in a single one.
  */
 _defineTask(bundleES6Task, _plumber(bundleES6Path, function (cb, gulpStream) {
+  var browser = browserify({
+        extensions: [".js"],
+        debug: true
+      }).transform(babelify),
+      bundler = transform(function (filename) {
+        return browser
+          .add(filename)
+          .bundle();
+      });
   return gulpStream
-    .pipe(notify({
+  .pipe(bundler)
+  .pipe(rename({ suffix: ".bundle", extname: ".js" }))
+  .pipe(gulp.dest(HarmonyBuildPath))
+  .pipe(notify({
       onLast: true,
       title: bundleTaskTitle,
       message: sprintf(compileTaskMessage, "Harmony")
@@ -669,7 +686,19 @@ _defineTask(bundleES6Task, _plumber(bundleES6Path, function (cb, gulpStream) {
  *  Bundles all TypeScript files in a single one.
  */
 _defineTask(bundleTSTask, _plumber(bundleTSPath, function (cb, gulpStream) {
+  var browser = browserify({
+        extensions: [".ts"],
+        debug: true
+      }).transform(tsifier),
+      bundler = transform(function (filename) {
+        return browser
+          .add(filename)
+          .bundle();
+      });
   return gulpStream
+    .pipe(bundler)
+    .pipe(rename({ suffix: ".bundle", extname: ".js" }))
+    .pipe(gulp.dest(TypeScriptBuildPath))
     .pipe(notify({
       onLast: true,
       title: bundleTaskTitle,
@@ -681,7 +710,19 @@ _defineTask(bundleTSTask, _plumber(bundleTSPath, function (cb, gulpStream) {
  *  Bundles all CoffeeScript files in a single one.
  */
 _defineTask(bundleCoffeeTask, _plumber(bundleCoffeePath, function (cb, gulpStream) {
+  var browser = browserify({
+        extensions: [".coffee"],
+        debug: true
+      }).transform(coffeeify),
+      bundler = transform(function (filename) {
+        return browser
+          .add(filename)
+          .bundle();
+      });
   return gulpStream
+    .pipe(bundler)
+    .pipe(rename({ suffix: ".bundle", extname: ".js" }))
+    .pipe(gulp.dest(CoffeeBuildPath))
     .pipe(notify({
       onLast: true,
       title: bundleTaskTitle,
