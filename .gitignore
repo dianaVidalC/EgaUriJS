@@ -1,2 +1,3 @@
-*
-!img
+.idea
+node_modules
+tests
