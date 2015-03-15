@@ -10,7 +10,7 @@ Secció congelada fins que la wiki sigui més completa.
 *EgaUriJS* està escrita utilitzant *POO*, donant l’avantatge als programadors per poder fer un sistema hereditari senzill, fàcil d’utilitzar i que fa que el codi de la llibreria sigui més expressiu o "*human-readable*". Aconseguir aquestes tres propietats és particularment difícil en **JavaScript**, ja que sempre s’acaba per sacrificar alguna d’elles. Com que no volem que tinguis que perdre el temps en aprendre a utilitzar-la, editar-la per que s’acomodi als teus gustos (o als de tots) o que no sigui eficient, la decisió està ben clara: no estarà escrita en *JavaScript*.
 
 Per poder utilitzar-la en una pàgina *Web* ha d’estar obligatòriament en *JavaScript*. ¿Com utilitzar i no utilitzar *JavaScript*? Senzill. Utilitzant els **supersets**<sup>[2][7]</sup> de *JavaScript*. A més, gracies a aquests llenguatges podem dividir la llibreria en diferents mòduls de manera que no hi hagi cap tipus de conflicte amb les variables i s’aïlla la lògica de cada part per que sigui més fàcil entendre-la.
-### Quins *supersets* o llenguatges soporta?
+### Quins *supersets* o llenguatges suporta?
 *EgaUriJS* no està tancada a cap llenguatge en concret, és més, està oberta a qualsevol suggeriment si es desitja afegir un nou llenguatge de programació amb una sèrie de condicions a tindre en compte:
 
  - Ha de tindre suport per la programació modular.
