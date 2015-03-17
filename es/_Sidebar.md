@@ -11,8 +11,8 @@
 **[Tareas][6]**
 
 [1]: Select-your-language
-[2]: Español---Inicio
-[3]: Español---Comandos
-[4]: Español---Dependencias
-[5]: Español---Ejemplos
-[6]: Español---Tareas
+[2]: Español-–-Inicio
+[3]: Español-–-Comandos
+[4]: Español-–-Dependencias
+[5]: Español-–-Ejemplos
+[6]: Español-–-Tareas

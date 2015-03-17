@@ -79,8 +79,8 @@
 **[yargs][41]**
 
 [1]: Select-your-language
-[2]: Català---Inici
-[3]: Català---Dependencies
+[2]: Català-–-Inici
+[3]: Català-–-Dependencies
 [4]: https://www.npmjs.com/package/babelify
 [5]: http://bower.io/
 [6]: https://www.npmjs.com/package/browserify
