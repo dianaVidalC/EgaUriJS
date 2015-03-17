@@ -1,4 +1,4 @@
-**[Language][1](*[EN][2]*)** > **[Dependencies][3]**
+**[Language][1]** (*[EN][2]*) > **[Dependencies][3]**
 
 ***
 

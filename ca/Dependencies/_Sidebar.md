@@ -1,4 +1,4 @@
-**[Idioma][1](*[CA][2]*)** > **[Dependències][3]**
+**[Idioma][1]** (*[CA][2]*) > **[Dependències][3]**
 
 ***
 
