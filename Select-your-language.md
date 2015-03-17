@@ -7,6 +7,6 @@
 [1]: https://raw.githubusercontent.com/Egatuts/EgaUriJS/wiki/img/lang/catalan.png
 [2]: https://raw.githubusercontent.com/Egatuts/EgaUriJS/wiki/img/lang/spanish.png
 [3]: https://raw.githubusercontent.com/Egatuts/EgaUriJS/wiki/img/lang/english.png
-[4]: CA-Inici
-[5]: ES-Inicio
+[4]: Català---Inici
+[5]: Español---Inicio
 [6]: Home
