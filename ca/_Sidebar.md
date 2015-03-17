@@ -1,10 +1,10 @@
-[Language][1] > [CA][2] > [Inici][2]
+**[Language][1](*[CA][2]*)** > **[Inici][2]**
 
 ***
 
 **[Comandes][3]**
 
-**[Dependencies][4]**
+**[Dependències][4]**
 
 **[Exemples][5]**
 

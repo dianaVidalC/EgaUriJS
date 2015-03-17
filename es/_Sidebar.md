@@ -1,4 +1,4 @@
-[Idioma][1] > [ES][2] > [Inicio][2]
+**[Idioma][1](*[ES][2]*)** > **[Inicio][2]**
 
 ***
 
