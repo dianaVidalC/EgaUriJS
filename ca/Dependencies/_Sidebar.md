@@ -79,8 +79,8 @@
 **[yargs][41]**
 
 [1]: Select-your-language
-[2]: Inici
-[3]: Dependencies
+[2]: CA-Inici
+[3]: CA-Dependencies
 [4]: https://www.npmjs.com/package/babelify
 [5]: http://bower.io/
 [6]: https://www.npmjs.com/package/browserify
