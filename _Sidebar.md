@@ -1,7 +1,14 @@
-* [CA][1]
-* [ES][2]
-* [EN][3]
+**[Select your language][1]**
 
-[1]: https://github.com/Egatuts/EgaUriJS/wiki/Inici
-[2]: https://github.com/Egatuts/EgaUriJS/wiki/Inicio
-[3]: https://github.com/Egatuts/EgaUriJS/wiki/Home
+***
+
+**[CA][1]**
+
+**[ES][2]**
+
+**[EN][3]**
+
+[1]: Select-your-language
+[2]: Català---Inici
+[3]: Español---Inicio
+[4]: Home

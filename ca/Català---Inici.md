@@ -34,12 +34,12 @@ Secció congelada fins que la llibreria arribi a la versió estable.
  <a name="footnote-supersets">2.</a> Llenguatges de programació, en major part, derivats de *JavaScript* que van ser creats amb la intenció de facilitar el desenvolupament i que tenen la opció de compilar o *transpilar* el codi del *superset* a *JavaScript* de manera molt eficient.
 
 [1]: https://raw.githubusercontent.com/Egatuts/EgaUriJS/wiki/img/EgaUriJS-728.png
-[2]: https://github.com/Egatuts/EgaUriJS/blob/wiki/es/Inicio.md#footnote-POO
+[2]: https://github.com/Egatuts/EgaUriJS/blob/wiki/Català---Inici.md#footnote-POO
 [3]: https://github.com/Egatuts/EgaUriJS/tree/wiki
 [4]: https://github.com/Egatuts/EgaUriJS/pulls
 [5]: https://github.com/Egatuts/EgaUriJS/issues
 [6]: https://github.com/Egatuts
-[7]: https://github.com/Egatuts/EgaUriJS/blob/wiki/es/Inicio.md#footnote-supersets
+[7]: https://github.com/Egatuts/EgaUriJS/blob/wiki/Català---Inici.md#footnote-supersets
 [8]: http://coffeescript.org/
 [9]: http://www.typescriptlang.org/
 [10]: https://github.com/lukehoban/es6features

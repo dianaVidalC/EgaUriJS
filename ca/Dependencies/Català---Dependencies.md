@@ -53,7 +53,7 @@ Les dependències opcionals són aquells mòduls que no són necessaris per la e
 * [karma-ie-launcher][41]: Plugin de karma per executar *Microsoft Internet Explorer*.
 * [mocha][42]: Llibreria per fer tests coneguts amb el nom de *unit testing*.
 
-[1]: https://github.com/Egatuts/EgaUriJS/wiki/Tasques
+[1]: Català---Tasques
 [2]: https://www.npmjs.com/
 [3]: https://nodejs.org/
 [4]: https://iojs.org/

@@ -30,7 +30,7 @@ The project is available in the following languages:
 ### Quick usage.
 Frozen section till first stable release version.
 
-[1]: https://github.com/Egatuts/EgaUriJS/wiki/Select-your-language
+[1]: Select-your-language
 [2]: https://raw.githubusercontent.com/Egatuts/EgaUriJS/wiki/img/EgaUriJS-728.png
 [3]: https://github.com/Egatuts/EgaUriJS/tree/wiki
 [4]: https://github.com/Egatuts/EgaUriJS/pulls

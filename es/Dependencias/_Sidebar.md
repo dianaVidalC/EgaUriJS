@@ -79,8 +79,8 @@
 **[yargs][41]**
 
 [1]: Select-your-language
-[2]: ES-Inicio
-[3]: ES-Dependencias
+[2]: Español---Inicio
+[3]: Español---Dependencias
 [4]: https://www.npmjs.com/package/babelify
 [5]: http://bower.io/
 [6]: https://www.npmjs.com/package/browserify

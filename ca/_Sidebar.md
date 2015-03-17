@@ -11,8 +11,8 @@
 **[Tasques][6]**
 
 [1]: Select-your-language
-[2]: Inici
-[3]: Comandes
-[4]: Dependencies
-[5]: Exemples
-[6]: Tasques
+[2]: Català---Inici
+[3]: Català---Comandes
+[4]: Català---Dependencies
+[5]: Català---Exemples
+[6]: Català---Tasques

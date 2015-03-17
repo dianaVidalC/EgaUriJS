@@ -53,7 +53,7 @@ Las dependencias opcionales son aquellos módulos que no son necesarios para la 
 * [karma-ie-launcher][41]: Plugin para ejecutar *Microsoft Internet Explorer*.
 * [mocha][42]: Librería para hacer test conocidos con el nombre de *unit testing*.
 
-[1]: https://github.com/Egatuts/EgaUriJS/wiki/Tareas
+[1]: Español---Tareas
 [2]: https://www.npmjs.com/
 [3]: https://nodejs.org/
 [4]: https://iojs.org/
