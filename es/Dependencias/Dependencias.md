@@ -12,7 +12,7 @@ Como no todas estas dependencias son necesarias para ejecutar las tareas, tendre
 ### Dependencias necesarias
 La gran mayoría de las dependencias son necesarias para la ejecución de las tareas automatizadas. En la siguiente lista puedes ver para que se usa cada una de ellas:
 * [babelify][5]: Permite usar el módulo **gulp-babel** junto con los *bundles* de **browserify**.
-* [browserify][6]: Analiza archivos JavaScript en busca de importaciones con `require()`, para crear un único archivo con todos los contenidos.
+* [browserify][6]: Analiza archivos *JavaScript* en busca de importaciones con `require()`, para crear un único archivo con todos los contenidos.
 * [coffeeify][7]: Permite usar el módulo **gulp-coffee** junto con los *bundles* de **browserify**.
 * [del][8]: Elimina carpetas o archivos.
 * [gulp][9]: Sistema de automatización basado en *streamings* para construir proyectos.
@@ -21,7 +21,7 @@ La gran mayoría de las dependencias son necesarias para la ejecución de las ta
 * [gulp-coffeelint][12]: Comprueba si hay errores de sintaxis en el código escrito en *CoffeeScript*.
 * [gulp-filter][13]: Filtra los *streamings* en función de la extensión del archivo original.
 * [gulp-jshint][14]: Comprueba si hay errores de sintaxis en el código escrito en *JavaScript Harmony* y en los resultados de las diferentes compilaciones.
-* [gulp-json-editor][15]: Modifica las propiedades JSON de un archivo.
+* [gulp-json-editor][15]: Modifica las propiedades *JSON* de un archivo.
 * [gulp-notify][16]: Permite notificar sobre las acciones tanto en **Windows** como en **Mac OS X** o **Linux**.
 * [gulp-plumber][17]: Permite capturar los errores dentro de los *streamings* para evitar que las tareas se detengan de manera inesperada.
 * [gulp-prompt][18]: Permite al usuario introducir datos a través de la línea de comandos, consola o terminal.
@@ -29,7 +29,7 @@ La gran mayoría de las dependencias son necesarias para la ejecución de las ta
 * [gulp-sourcemaps][20]: Crea *sourcemaps* usados para ver el código original de los archivos *JavaScript* en el *debugger* del navegador (**Firebug**, **DevTools**).
 * [gulp-tslint][21]: Comprueba si hay errores de sintaxis en el código escrito en *TypeScript*.
 * [gulp-typescript][22]: Compila el código escrito en *TypeScript* a *JavaScript* (**ES3**).
-* [gulp-uglify][23]: Comprime el código escrito en JavaScript para ahorrar ancho de banda.
+* [gulp-uglify][23]: Comprime el código escrito en *JavaScript* para ahorrar ancho de banda.
 * [gulp-util][24]: Utilidades variadas necesarias en algunos procesos de Gulp.
 * [jshint-stylish][25]: Hace más sencillo y visual el *reporter* de **gulp-jshint**.
 * [open][26]: Abre carpetas o archivos con el explorador de archivos del sistema operativo.
@@ -42,7 +42,7 @@ La gran mayoría de las dependencias son necesarias para la ejecución de las ta
 Las dependencias opcionales son aquellos módulos que no son necesarios para la ejecución de las tareas automatizadas. A grandes trazos, podríamos decir que son aquellos módulos que sirven para publicar el proyecto en diferentes repositorios o bien para hacer tests en los navegadores para comprobar su integridad. A continuación, puedes ver la lista de los módulos con una breve descripción de su funcionalidad:
 * [bower][31]: Administrador de dependencias *JavaScript* para páginas Web.
 * [duo][32]: Administrador de dependencias *JavaScript* para páginas Web con soporte para optimizar los recursos mediante *bundles*.
-* [ender][33]: Permite inyectar la librería a un *namespace* común, el cual es el símbolo **$**, y que permite o añadir librerías de dicho *namespace* con la posibilidad de crear *bundles*.
+* [ender][33]: Permite inyectar la librería a un *namespace* común, el cual es el símbolo **$**, y que permite borrar o añadir librerías de dicho *namespace* con la posibilidad de crear *bundles*.
 * [jam][34]: Administrador de dependencias *JavaScript* pensado expresamente para el navegador.
 * [jspm][35]: Administrador de dependencias *JavaScript* pensado para dar soporte a librerías escritas en *JavaScript Harmony* y con la posibilidad de carga asíncrona gracias a un compilador que funciona en *runtime*.
 * [karma][36]: Ejecuta tests automáticos en los navegadores especificados cuando los archivos cambian. También soporta el navegador *PhantomJS*.
@@ -50,7 +50,7 @@ Las dependencias opcionales son aquellos módulos que no son necesarios para la 
 * [karma-chrome-launcher][38]: Plugin de karma para ejecutar *Google Chrome* (Canary también).
 * [karma-expect][39]: Plugin para añadir soporte a la librería **expect.js**.
 * [karma-firefox-launcher][40]: Plugin para ejecutar *Mozilla Firefox*.
-* [karma-ie-launcher][41]: Plugin para ejecutar Microsoft Internet Explorer.
+* [karma-ie-launcher][41]: Plugin para ejecutar *Microsoft Internet Explorer*.
 * [mocha][42]: Librería para hacer test conocidos con el nombre de *unit testing*.
 
 [1]: https://github.com/Egatuts/EgaUriJS/wiki/Tareas
