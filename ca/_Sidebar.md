@@ -1,9 +1,18 @@
-* [Comandes][1]
-* [Dependències][2]
-* [Exemples][3]
-* [Tasques][4]
+[Language][1] > [CA][2] > [Inici][2]
 
-[1]: Comandes
-[2]: Dependencies
-[3]: Exemples
-[4]: Tasques
+***
+
+**[Comandes][3]**
+
+**[Dependencies][4]**
+
+**[Exemples][5]**
+
+**[Tasques][6]**
+
+[1]: Select-your-language
+[2]: Inici
+[3]: Comandes
+[4]: Dependencies
+[5]: Exemples
+[6]: Tasques

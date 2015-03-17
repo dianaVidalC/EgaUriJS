@@ -1,9 +1,18 @@
-* [Commands][1]
-* [Dependencies][2]
-* [Examples][3]
-* [Tasks][4]
+[Language][1] > [EN][2] > [Home][2]
 
-[1]: Commands
-[2]: Dependencies
-[3]: Examples
-[4]: Tasks
+***
+
+**[Commands][3]**
+
+**[Dependencies][4]**
+
+**[Examples][5]**
+
+**[Tasks][6]**
+
+[1]: Select-your-language
+[2]: Home
+[3]: Commands
+[4]: Dependencies
+[5]: Examples
+[6]: Tasks
