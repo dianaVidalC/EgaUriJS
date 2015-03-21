@@ -45,7 +45,6 @@ var babel      = require("gulp-babel"),
     stylish    = require("jshint-stylish"),
     transform  = require("vinyl-transform"),
     ts         = require("gulp-typescript"),
-    util       = require("gulp-util"),
     tsifier    = require("typescriptifier"),
     tslint     = require("gulp-tslint"),
     uglify     = require("gulp-uglify"),
@@ -75,6 +74,9 @@ var babel      = require("gulp-babel"),
 
     commitTaskTitle   = "Commit task finished.",
     commitTaskMessage = "Changes has been commited.",
+
+    pushTaskTitle   = "Push task finished.",
+    pushTaskMessage = "Changes pushed to %s remote with branches %s.",
 
     bundleTaskTitle   = "Bundle task finished.",
     bundleTaskMessage = "%s source files were successfully compiled/transpiled and bundled in a single one.",
@@ -136,6 +138,14 @@ var babel      = require("gulp-babel"),
      *  Commit task. Commits changes using git.
      */
     commitTask = ["commit"],
+
+    /*
+     *  Push task. Pushes changes to the remote.
+     */
+    pushAllTask        = ["push", "push-all"],
+    pushMasterTask     = ["push-master", "push-main"],
+    pushWikiTask       = ["push-wiki"],
+    pushWikiBranchTask = ["push-wiki-branch"],
 
     /*
      *  Watch task. Watches for changes in the declared files.
@@ -640,6 +650,24 @@ _defineTask(commitTask, _plumber(rootPath, function (cb, gulpStream) {
       onLast: true,
       title: commitTaskTitle,
       message: commitTaskMessage
+    }));
+}));
+
+
+/*____ Push task ____*/
+
+/*
+ *  Pushes commits from master branch.
+ */
+_defineTask(pushMasterTask, _plumber(rootPath, function (cb, gulpStream) {
+  return gulpStream
+    .pipe(git.push("origin", "master:master", function (err) {
+      if (err) throw err;
+    }))
+    .pipe(notify({
+      onLast: true,
+      title: pushTaskTitle,
+      message: sprintf(pushTaskMessage, "origin", "master:master")
     }));
 }));
 
