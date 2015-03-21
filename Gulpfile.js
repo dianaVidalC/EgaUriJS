@@ -657,6 +657,15 @@ _defineTask(commitTask, _plumber(rootPath, function (cb, gulpStream) {
 /*____ Push task ____*/
 
 /*
+ *  Pushes to all remotes all branches.
+ */
+_defineTask(pushAllTask, function () {
+  gulp.run(pushMasterTask[0]);
+  gulp.run(pushWikiBranchTask[0]);
+  gulp.run(pushWikiTask[0]);
+});
+
+/*
  *  Pushes commits from master branch.
  */
 _defineTask(pushMasterTask, _plumber(rootPath, function (cb, gulpStream) {
