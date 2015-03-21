@@ -686,6 +686,21 @@ _defineTask(pushWikiBranchTask, _plumber(rootPath, function (cb, gulpStream) {
     }));
 }));
 
+/*
+ *  Pushes commits to the wiki remote.
+ */
+_defineTask(pushWikiBranchTask, _plumber(rootPath, function (cb, gulpStream) {
+  return gulpStream
+    .pipe(git.push("wiki", "wiki:master", function (err) {
+      if (err) throw err;
+    }))
+    .pipe(notify({
+      onLast: true,
+      title: pushTaskTitle,
+      message: sprintf(pushTaskMessage, "wiki", "wiki:master")
+    }));
+}));
+
 
 /*____ Watch task ____*/
 
