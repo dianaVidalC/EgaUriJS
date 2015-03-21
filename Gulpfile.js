@@ -30,6 +30,7 @@ var babel      = require("gulp-babel"),
     del        = require("del"),
     filter     = require("gulp-filter"),
     fs         = require("fs"),
+    git        = require("gulp-git"),
     gulp       = require("gulp"),
     jeditor    = require("gulp-json-editor"),
     jshint     = require("gulp-jshint"),
@@ -44,6 +45,7 @@ var babel      = require("gulp-babel"),
     stylish    = require("jshint-stylish"),
     transform  = require("vinyl-transform"),
     ts         = require("gulp-typescript"),
+    util       = require("gulp-util"),
     tsifier    = require("typescriptifier"),
     tslint     = require("gulp-tslint"),
     uglify     = require("gulp-uglify"),
@@ -70,6 +72,9 @@ var babel      = require("gulp-babel"),
 
     compileTaskTitle   = "Compile task finished.",
     compileTaskMessage = "%s source files were successfully compiled/transpiled.",
+
+    commitTaskTitle   = "Commit task finished.",
+    commitTaskMessage = "Changes has been commited.",
 
     bundleTaskTitle   = "Bundle task finished.",
     bundleTaskMessage = "%s source files were successfully compiled/transpiled and bundled in a single one.",
@@ -121,6 +126,16 @@ var babel      = require("gulp-babel"),
      *  Version task. Changes the version code declared in package.json and bower.json.
      */
     versionateTask = ["versionate"],
+
+    /*
+     *  Version tag task. Adds a version task to the actual commit history point.
+     */
+    versionTagTask = ["release"],
+
+    /*
+     *  Commit task. Commits changes using git.
+     */
+    commitTask = ["commit"],
 
     /*
      *  Watch task. Watches for changes in the declared files.
@@ -610,6 +625,22 @@ _defineTask(versionateTask, _plumber(versionatePath, function (cb, gulpStream) {
         .pipe(gulp.dest(rootPath));
     }));
   return stream;
+}));
+
+
+/*____ Commit task ____*/
+
+/*
+ *  Commits changes.
+ */
+_defineTask(commitTask, _plumber(rootPath, function (cb, gulpStream) {
+  return gulpStream
+    .pipe(git.commit(yargs.m))
+    .pipe(notify({
+      onLast: true,
+      title: commitTaskTitle,
+      message: commitTaskMessage
+    }));
 }));
 
 
