@@ -73,7 +73,10 @@ var babel      = require("gulp-babel"),
     compileTaskMessage = "%s source files were successfully compiled/transpiled.",
 
     commitTaskTitle   = "Commit task finished.",
-    commitTaskMessage = "Changes has been commited.",
+    commitTaskMessage = "Changes has been committed.",
+
+    versionTagTitle   = "Version tag task finished.",
+    versionTagMessage = "Commit has been tagged with Semantic version %s.",
 
     pushTaskTitle   = "Push task finished.",
     pushTaskMessage = "Changes pushed to %s remote with branches %s.",
@@ -650,6 +653,33 @@ _defineTask(commitTask, _plumber(rootPath, function (cb, gulpStream) {
       onLast: true,
       title: commitTaskTitle,
       message: commitTaskMessage
+    }));
+}));
+
+
+/*____ Release task ____*/
+
+/*
+ *  Tags the commit using Semver.
+ */
+_defineTask(versionTagTask, _plumber(versionatePath, function (cb, gulpStream) {
+  return gulpStream
+    .pipe(jeditor({
+      "version": yargs.v.replace("v", "")
+    }, {
+      "indent_char": " ",
+      "indent_size": 2
+    }))
+    .pipe(git.add({ args: "-i" }))
+    .pipe(transform(function () {
+      git.tag(yargs.v, yargs.m, { args: "signed" }, function (err) {
+        if (err) throw err;
+      })
+    }))
+    .pipe(notify({
+      onLast: true,
+      title: versionTagTitle,
+      message: sprintf(versionTagMessage, yargs.v)
     }));
 }));
 
