@@ -42,6 +42,8 @@ var babel      = require("gulp-babel"),
     rename     = require("gulp-rename"),
     sourcemaps = require("gulp-sourcemaps"),
     sprintf    = require("sprintf-js").sprintf,
+    Stream     = require("stream"),
+    through2   = require("through2"),
     stylish    = require("jshint-stylish"),
     transform  = require("vinyl-transform"),
     ts         = require("gulp-typescript"),
@@ -296,6 +298,20 @@ var babel      = require("gulp-babel"),
         return result;
       }
     })(),
+
+    /*
+     *  Runs on last stream.
+     */
+    _last = function (fn) {
+      return through2.obj(function (file, encoding, cb) {
+        this.push(file);
+        cb();
+      }, function (cb) {
+        fn();
+        this.push(null);
+        this.emit("end");
+      });
+    },
 
     /*
      *  Sets a task with multiple names using _defineSimpleTask.
@@ -648,7 +664,7 @@ _defineTask(versionateTask, _plumber(versionatePath, function (cb, gulpStream) {
  */
 _defineTask(commitTask, _plumber(rootPath, function (cb, gulpStream) {
   return gulpStream
-    .pipe(git.commit(yargs.m))
+    .pipe(git.commit(yargs.m, { args: "-s" }))
     .pipe(notify({
       onLast: true,
       title: commitTaskTitle,
@@ -670,11 +686,13 @@ _defineTask(versionTagTask, _plumber(versionatePath, function (cb, gulpStream) {
       "indent_char": " ",
       "indent_size": 2
     }))
-    .pipe(git.add({ args: "-i" }))
-    .pipe(transform(function () {
+    .pipe(gulp.dest(rootPath))
+    .pipe(git.add())
+    .pipe(git.commit(yargs.m, { args: "-s --amend" }))
+    .pipe(_last(function () {
       git.tag(yargs.v, yargs.m, { args: "signed" }, function (err) {
         if (err) throw err;
-      })
+      });
     }))
     .pipe(notify({
       onLast: true,
@@ -700,8 +718,10 @@ _defineTask(pushAllTask, function () {
  */
 _defineTask(pushMasterTask, _plumber(rootPath, function (cb, gulpStream) {
   return gulpStream
-    .pipe(git.push("origin", "master:master", function (err) {
-      if (err) throw err;
+    .pipe(_last(function () {
+      git.push("origin", "master:master", function (err) {
+        if (err) throw err;
+      });
     }))
     .pipe(notify({
       onLast: true,
@@ -715,8 +735,10 @@ _defineTask(pushMasterTask, _plumber(rootPath, function (cb, gulpStream) {
  */
 _defineTask(pushWikiBranchTask, _plumber(rootPath, function (cb, gulpStream) {
   return gulpStream
-    .pipe(git.push("origin", "wiki:wiki", function (err) {
-      if (err) throw err;
+    .pipe(_last(function () {
+      git.push("origin", "wiki:wiki", function (err) {
+        if (err) throw err;
+      });
     }))
     .pipe(notify({
       onLast: true,
@@ -730,8 +752,10 @@ _defineTask(pushWikiBranchTask, _plumber(rootPath, function (cb, gulpStream) {
  */
 _defineTask(pushWikiBranchTask, _plumber(rootPath, function (cb, gulpStream) {
   return gulpStream
-    .pipe(git.push("wiki", "wiki:master", function (err) {
-      if (err) throw err;
+    .pipe(_last( function () {
+      git.push("wiki", "wiki:master", function (err) {
+        if (err) throw err;
+      });
     }))
     .pipe(notify({
       onLast: true,
