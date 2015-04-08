@@ -72,11 +72,13 @@
 
 **[sprintf-js][38]**
 
-**[typescriptifier][39]**
+**[through2][39]**
 
-**[vinyl-transform][40]**
+**[typescriptifier][40]**
 
-**[yargs][41]**
+**[vinyl-transform][41]**
+
+**[yargs][42]**
 
 [1]: Select-your-language
 [2]: Català-–-Inici
@@ -116,6 +118,7 @@
 [36]: http://mochajs.org/
 [37]: https://www.npmjs.com/package/open
 [38]: https://www.npmjs.com/package/sprintf-js
-[39]: https://www.npmjs.com/package/typescriptifier
-[40]: https://www.npmjs.com/package/vinyl-transform
-[41]: https://www.npmjs.com/package/yargs
+[39]: https://www.npmjs.com/package/through2
+[40]: https://www.npmjs.com/package/typescriptifier
+[41]: https://www.npmjs.com/package/vinyl-transform
+[42]: https://www.npmjs.com/package/yargs

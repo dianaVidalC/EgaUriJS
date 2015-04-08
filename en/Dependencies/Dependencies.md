@@ -34,24 +34,25 @@ The vast majority of dependencies are necessary to execute the tasks. Here you c
 * [jshint-stylish][25]: More stylish reporter for **jshint**.
 * [open][26]: Opens files and folders.
 * [sprintf-js][27]: `sprintf()` function in *NodeJS*.
-* [typescriptifier][28]: Uses **gulp-typescript** with **browserify**'s bundles.
-* [vinyl-transform][29]: Wrapper to work with Gulp without worrying if we are using `Buffer`s or `Stream`ings.
-* [yargs][30]: Reads arguments from command line.
+* [through2][28]: NodeJS Streams2 Transform wrapper.
+* [typescriptifier][29]: Uses **gulp-typescript** with **browserify**'s bundles.
+* [vinyl-transform][30]: Wrapper to work with Gulp without worrying if we are using `Buffer`s or `Stream`ings.
+* [yargs][31]: Reads arguments from command line.
 
 ### Optional dependencies
 The rest of dependencies are considered optional because are only needed to push the project to other repositories or to do automatic unit testing:
-* [bower][31]: JavaScript package manager for the Web.
-* [duo][32]: JavaScript package manager with bundles optimizations.
-* [ender][33]: Injects libraries to a global namespace "$". Also a package manager for JavaScript.
-* [jam][34]: Another JavaScript package manager.
-* [jspm][35]: JavaScript package manager with support for **ES6** libraries.
-* [karma][36]: Automatic JavaScript test runner (aka **Testacular**).
-* [karma-cli][37]: Enables *karma* command.
-* [karma-chrome-launcher][38]: **Google Chrome** (**Canary** also) launcher plugin for **karma**.
-* [karma-expect][39]: Adds **expect.js** library.
-* [karma-firefox-launcher][40]: **Mozilla Firefox** launcher plugin for **karma**.
-* [karma-ie-launcher][41]: **Microsoft Internet Explorer** launcher plugin for **karma**.
-* [mocha][42]: Unit testing library.
+* [bower][32]: JavaScript package manager for the Web.
+* [duo][33]: JavaScript package manager with bundles optimizations.
+* [ender][34]: Injects libraries to a global namespace "$". Also a package manager for JavaScript.
+* [jam][35]: Another JavaScript package manager.
+* [jspm][36]: JavaScript package manager with support for **ES6** libraries.
+* [karma][37]: Automatic JavaScript test runner (aka **Testacular**).
+* [karma-cli][38]: Enables *karma* command.
+* [karma-chrome-launcher][39]: **Google Chrome** (**Canary** also) launcher plugin for **karma**.
+* [karma-expect][40]: Adds **expect.js** library.
+* [karma-firefox-launcher][41]: **Mozilla Firefox** launcher plugin for **karma**.
+* [karma-ie-launcher][42]: **Microsoft Internet Explorer** launcher plugin for **karma**.
+* [mocha][43]: Unit testing library.
 
 [1]: Tasks
 [2]: https://www.npmjs.com/
@@ -80,18 +81,19 @@ The rest of dependencies are considered optional because are only needed to push
 [25]: https://www.npmjs.com/package/jshint-stylish
 [26]: https://www.npmjs.com/package/open
 [27]: https://www.npmjs.com/package/sprintf-js
-[28]: https://www.npmjs.com/package/typescriptifier
-[29]: https://www.npmjs.com/package/vinyl-transform
-[30]: https://www.npmjs.com/package/yargs
-[31]: http://bower.io/
-[32]: http://duojs.org/
-[33]: https://github.com/ender-js/ender-js
-[34]: http://jamjs.org/
-[35]: http://jspm.io/
-[36]: http://karma-runner.github.io/
-[37]: https://www.npmjs.com/package/karma-cli
-[38]: https://www.npmjs.com/package/karma-chrome-launcher
-[39]: https://www.npmjs.com/package/karma-expect
-[40]: https://www.npmjs.com/package/karma-firefox-launcher
-[41]: https://www.npmjs.com/package/karma-ie-launcher
-[42]: http://mochajs.org/
+[28]: https://www.npmjs.com/package/through2
+[29]: https://www.npmjs.com/package/typescriptifier
+[30]: https://www.npmjs.com/package/vinyl-transform
+[31]: https://www.npmjs.com/package/yargs
+[32]: http://bower.io/
+[33]: http://duojs.org/
+[34]: https://github.com/ender-js/ender-js
+[35]: http://jamjs.org/
+[36]: http://jspm.io/
+[37]: http://karma-runner.github.io/
+[38]: https://www.npmjs.com/package/karma-cli
+[39]: https://www.npmjs.com/package/karma-chrome-launcher
+[40]: https://www.npmjs.com/package/karma-expect
+[41]: https://www.npmjs.com/package/karma-firefox-launcher
+[42]: https://www.npmjs.com/package/karma-ie-launcher
+[43]: http://mochajs.org/

@@ -2,7 +2,7 @@
 
 ***
 
-**[Comandes][3]**
+**[Ordres][3]**
 
 **[Dependències][4]**
 
@@ -12,7 +12,7 @@
 
 [1]: Select-your-language
 [2]: Català-–-Inici
-[3]: Català-–-Comandes
+[3]: Català-–-Ordres
 [4]: Català-–-Dependencies
 [5]: Català-–-Exemples
 [6]: Català-–-Tasques

@@ -34,24 +34,25 @@ La gran mayoría de las dependencias son necesarias para la ejecución de las ta
 * [jshint-stylish][25]: Hace más sencillo y visual el *reporter* de **gulp-jshint**.
 * [open][26]: Abre carpetas o archivos con el explorador de archivos del sistema operativo.
 * [sprintf-js][27]: Añade soporte para usar la función `sprintf()` en *NodeJS*.
-* [typescriptifier][28]: Permite usar el módulo **gulp-typescript** junto con los *bundles* de **browserify**.
-* [vinyl-transform][29]: Crea una función para pasar al método `pipe()` de Gulp más fácilmente sin tener que preocuparse si estamos tratando con `Buffer`s o `Stream`ings.
-* [yargs][30]: Nos da la posibilidad de leer los argumentos pasados por la línea de comandos cuando se ha ejecutado una tarea.
+* [through2][28]: Hace más fácil trabajar con los `Streams2` de *NodeJS*.
+* [typescriptifier][29]: Permite usar el módulo **gulp-typescript** junto con los *bundles* de **browserify**.
+* [vinyl-transform][30]: Crea una función para pasar al método `pipe()` de Gulp más fácilmente sin tener que preocuparse si estamos tratando con `Buffer`s o `Stream`ings.
+* [yargs][31]: Nos da la posibilidad de leer los argumentos pasados por la línea de comandos cuando se ha ejecutado una tarea.
 
 ### Dependencias opcionales
 Las dependencias opcionales son aquellos módulos que no son necesarios para la ejecución de las tareas automatizadas. A grandes trazos, podríamos decir que son aquellos módulos que sirven para publicar el proyecto en diferentes repositorios o bien para hacer tests en los navegadores para comprobar su integridad. A continuación, puedes ver la lista de los módulos con una breve descripción de su funcionalidad:
-* [bower][31]: Administrador de dependencias *JavaScript* para páginas Web.
-* [duo][32]: Administrador de dependencias *JavaScript* para páginas Web con soporte para optimizar los recursos mediante *bundles*.
-* [ender][33]: Permite inyectar la librería a un *namespace* común, el cual es el símbolo **$**, y que permite borrar o añadir librerías de dicho *namespace* con la posibilidad de crear *bundles*.
-* [jam][34]: Administrador de dependencias *JavaScript* pensado expresamente para el navegador.
-* [jspm][35]: Administrador de dependencias *JavaScript* pensado para dar soporte a librerías escritas en *JavaScript Harmony* y con la posibilidad de carga asíncrona gracias a un compilador que funciona en *runtime*.
-* [karma][36]: Ejecuta tests automáticos en los navegadores especificados cuando los archivos cambian. También soporta el navegador *PhantomJS*.
-* [karma-cli][37]: Habilita el uso del comando `karma` en la línea de comandos, consola o terminal.
-* [karma-chrome-launcher][38]: Plugin de karma para ejecutar *Google Chrome* (Canary también).
-* [karma-expect][39]: Plugin para añadir soporte a la librería **expect.js**.
-* [karma-firefox-launcher][40]: Plugin para ejecutar *Mozilla Firefox*.
-* [karma-ie-launcher][41]: Plugin para ejecutar *Microsoft Internet Explorer*.
-* [mocha][42]: Librería para hacer test conocidos con el nombre de *unit testing*.
+* [bower][32]: Administrador de dependencias *JavaScript* para páginas Web.
+* [duo][33]: Administrador de dependencias *JavaScript* para páginas Web con soporte para optimizar los recursos mediante *bundles*.
+* [ender][34]: Permite inyectar la librería a un *namespace* común, el cual es el símbolo **$**, y que permite borrar o añadir librerías de dicho *namespace* con la posibilidad de crear *bundles*.
+* [jam][35]: Administrador de dependencias *JavaScript* pensado expresamente para el navegador.
+* [jspm][36]: Administrador de dependencias *JavaScript* pensado para dar soporte a librerías escritas en *JavaScript Harmony* y con la posibilidad de carga asíncrona gracias a un compilador que funciona en *runtime*.
+* [karma][37]: Ejecuta tests automáticos en los navegadores especificados cuando los archivos cambian. También soporta el navegador *PhantomJS*.
+* [karma-cli][38]: Habilita el uso del comando `karma` en la línea de comandos, consola o terminal.
+* [karma-chrome-launcher][39]: Plugin de karma para ejecutar *Google Chrome* (Canary también).
+* [karma-expect][40]: Plugin para añadir soporte a la librería **expect.js**.
+* [karma-firefox-launcher][41]: Plugin para ejecutar *Mozilla Firefox*.
+* [karma-ie-launcher][42]: Plugin para ejecutar *Microsoft Internet Explorer*.
+* [mocha][43]: Librería para hacer test conocidos con el nombre de *unit testing*.
 
 [1]: Español-–-Tareas
 [2]: https://www.npmjs.com/
@@ -80,18 +81,19 @@ Las dependencias opcionales son aquellos módulos que no son necesarios para la 
 [25]: https://www.npmjs.com/package/jshint-stylish
 [26]: https://www.npmjs.com/package/open
 [27]: https://www.npmjs.com/package/sprintf-js
-[28]: https://www.npmjs.com/package/typescriptifier
-[29]: https://www.npmjs.com/package/vinyl-transform
-[30]: https://www.npmjs.com/package/yargs
-[31]: http://bower.io/
-[32]: http://duojs.org/
-[33]: https://github.com/ender-js/ender-js
-[34]: http://jamjs.org/
-[35]: http://jspm.io/
-[36]: http://karma-runner.github.io/
-[37]: https://www.npmjs.com/package/karma-cli
-[38]: https://www.npmjs.com/package/karma-chrome-launcher
-[39]: https://www.npmjs.com/package/karma-expect
-[40]: https://www.npmjs.com/package/karma-firefox-launcher
-[41]: https://www.npmjs.com/package/karma-ie-launcher
-[42]: http://mochajs.org/
+[28]: https://www.npmjs.com/package/through2
+[29]: https://www.npmjs.com/package/typescriptifier
+[30]: https://www.npmjs.com/package/vinyl-transform
+[31]: https://www.npmjs.com/package/yargs
+[32]: http://bower.io/
+[33]: http://duojs.org/
+[34]: https://github.com/ender-js/ender-js
+[35]: http://jamjs.org/
+[36]: http://jspm.io/
+[37]: http://karma-runner.github.io/
+[38]: https://www.npmjs.com/package/karma-cli
+[39]: https://www.npmjs.com/package/karma-chrome-launcher
+[40]: https://www.npmjs.com/package/karma-expect
+[41]: https://www.npmjs.com/package/karma-firefox-launcher
+[42]: https://www.npmjs.com/package/karma-ie-launcher
+[43]: http://mochajs.org/
